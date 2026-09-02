@@ -21,8 +21,8 @@
    - `merged/radiology-prereview/dealbreakers.md`  
    - `merged/radiology-prereview/pre-submission-hard-gates.md`  
    - `merged/radiology-prereview/review-report-format.md`  
-   - 清单：`05_manuscript/bundles/manuscript-core/references/merged/radiology-reporting/*`  
-   - 引用门：`05_manuscript/bundles/manuscript-core/references/merged/radiology-citation/claim-verification-gate.md`  
+   - 清单：`05_manuscript/` reporting files / mounted `05-writing-generic`  
+   - 引用门：`05_manuscript/claim-verification-gate.md`  
 3. 分块：Methods · Stats · Reporting · Claims · Figures/Tables（若有）  
 4. 每条：位置 → 问题 → 作者应改什么（不编造未做实验）  
 5. 输出报告（见 §2.4）  

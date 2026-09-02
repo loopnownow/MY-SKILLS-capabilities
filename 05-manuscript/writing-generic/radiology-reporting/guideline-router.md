@@ -48,7 +48,7 @@ A "yes" to several is normal. Stack them.
   that explainability/robustness/fairness were addressed somewhere in the study, not only in the
   reporting checklist items that happen to touch them (CLAIM/TRIPOD+AI's fairness item is
   narrower). Cross-ref `radiology-deep-learning/interpretability-uncertainty.md`（该模块尚未建立，暂无内容） and
-  `../../../../../../../archive/clinical-translation/references/prospective-deployment.md` (monitoring/drift already lives there).
+  `../03_research/clinical-translation/prospective-deployment.md` (monitoring/drift already lives there).
 
 Authors often confuse "we scored well on RQS" with "we are unbiased (PROBAST)". They are
 different axes. Report the reporting guideline as the backbone; use quality/RoB tools to
@@ -67,7 +67,7 @@ strengthen Methods, FUTURE-AI to frame deployability, and pre-empt reviewer crit
 - Complete the **Reporting Summary** (published with the article) and, if requested, the
   **Editorial Policy Checklist** (→ `nature-reporting-summary.md`).
 - Plan the **Extended Data / Supplementary Information / Source Data** split
-  (→ `../../../../figure-engine/references/nature-figure-spec.md`, `radiology-data`).
+  (→ mounted `04-figure-engine` (`nature-figure-spec.md`), `radiology-data`).
 - See `radiology-journal/submission-logistics.md`（该模块尚未建立，暂无内容） for the venue-specific pre-flight checklist.
 
 ## Edge cases
