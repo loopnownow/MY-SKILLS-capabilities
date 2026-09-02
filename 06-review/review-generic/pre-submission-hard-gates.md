@@ -20,14 +20,14 @@ Each gate is `PASS`, `CONDITIONAL`, or `FAIL`.
 | Results-as-validation | Every major claim maps to a result/figure/table and does not exceed evidence | `radiology-writing`, `radiology-stats` |
 | Statistical completeness | CIs, calibration, DCA/clinical utility when relevant, multiplicity, survival assumptions, sample-size/event limits | `radiology-stats` |
 | Reporting stack | CLAIM/TRIPOD+AI/CLEAR/STARD/IBSI/RQS/Nature Reporting Summary items are materially satisfied | `radiology-reporting` |
-| Figure/data crosswalk | Figures match data and manuscript claims; no render/overlap defects | `figure-engine` |
+| Figure/data crosswalk | Figures match data and manuscript claims; no render/overlap defects | mounted `04-figure-engine` |
 | Citation verification | Key background, novelty, comparison, and guideline claims are supported by a fixed two-pass claim audit | `radiology-citation` |
 | Ethics/data availability | IRB/consent/de-identification/data availability/code availability are consistent | `radiology-ethics`, `radiology-data` |
 | Reviewer objection register | Likely objections are anticipated with evidence or bounded language | relevant skill |
 
 ## Two-pass claim audit gate
 
-Before final submission, run or request `../../../../../../05_manuscript/bundles/manuscript-core/references/merged/radiology-citation/claim-verification-gate.md` for the abstract, Key Results, figure legends, tables, Discussion comparison claims, novelty claims, and graphical abstract text.
+Before final submission, run or request `../05_manuscript/claim-verification-gate.md` for the abstract, Key Results, figure legends, tables, Discussion comparison claims, novelty claims, and graphical abstract text.
 
 | Pass | Requirement | Failure mode |
 |---|---|---|
