@@ -11,7 +11,7 @@ Layout is classified by A domain (unlimited depth inside each pack):
 02-data-processing/   xlsx, imaging-qc, radiomics-habitat, impute, generic-docs
 03-research/          literature, design, frontier
 04-analysis/          stats-generic, figure-engine
-05-manuscript/        writing-generic, de-ai
+05-manuscript/        writing-generic
 06-review/            review-generic
 ```
 
@@ -22,7 +22,7 @@ Layout is classified by A domain (unlimited depth inside each pack):
 3. A records the id in `01_skill-discovery-integration/registry.yaml` `mounts:` as `MOUNTED` and lists it in `MOUNTED_SKILLS.md`.
 4. Domain skills call **ids** below, not old `bundles/` paths.
 
-Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDATES.md`. 05 writing-generic, 05 de-ai, and 06 review-generic are B-only (A copies removed 2026-09-02).
+Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDATES.md`. 05 writing-generic and 06 review-generic are B-only. de-AI returned to A `05_manuscript/personal/` (2026-09-02).
 
 ## Mount points (ids → paths)
 
@@ -39,12 +39,11 @@ Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDA
 | `04-stats-generic` | `04-analysis/stats-generic/` | Generic statistics encyclopaedia |
 | `04-figure-engine` | `04-analysis/figure-engine/` | Figure generation (including journal-family visual style / Nature figure spec) |
 | `05-writing-generic` | `05-manuscript/writing-generic/` | Generic writing, reporting, citation, ethics, journal house style |
-| `05-de-ai` | `05-manuscript/de-ai/` | Forbidden phrases / AI-isms (moved from A on user instruction) |
 | `06-review-generic` | `06-review/review-generic/` | Generic prereview / response machinery |
 
 Translational / reader-study **design** mounts (when approved) belong under `03-research/` — A personal `clinical-translation` stays in MY-SKILLS; do not copy it here.
 
-This package does **not** contain personal Aitor-format, personal review/response style, 0RAD pipeline rules, radiology-stats lab policy, ethics form packs, or MATLAB preprocess scripts. `05-de-ai` is here by explicit user move.
+This package does **not** contain personal Aitor-format, de-AI, personal review/response style, 0RAD pipeline rules, radiology-stats lab policy, ethics form packs, or MATLAB preprocess scripts.
 
 ## Safety
 
