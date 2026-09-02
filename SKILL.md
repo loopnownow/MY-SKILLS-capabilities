@@ -18,19 +18,21 @@ Reusable professional modules extracted from MY-SKILLS. Independent of:
 - personal review/response style
 - personal statistical policies (`radiology-stats`, `0rad-pipeline-rules`)
 
-Mount points:
+Mount-point table (id → classified path; unlimited depth inside each pack):
 
-- 02-xlsx
-- 02-imaging-qc
-- 02-radiomics-habitat
-- 02-impute
-- 02-generic-docs
-- 03-literature
-- 03-design
-- 03-frontier
-- 04-stats-generic
-- 04-figure-engine
-- 05-writing-generic
-- 06-review-generic
+| Id | Path |
+|---|---|
+| `02-xlsx` | `02-data-processing/xlsx/` |
+| `02-imaging-qc` | `02-data-processing/imaging-qc/` |
+| `02-radiomics-habitat` | `02-data-processing/radiomics-habitat/` |
+| `02-impute` | `02-data-processing/impute/` |
+| `02-generic-docs` | `02-data-processing/generic-docs/` |
+| `03-literature` | `03-research/literature/` |
+| `03-design` | `03-research/design/` |
+| `03-frontier` | `03-research/frontier/` |
+| `04-stats-generic` | `04-analysis/stats-generic/` |
+| `04-figure-engine` | `04-analysis/figure-engine/` |
+| `05-writing-generic` | `05-manuscript/writing-generic/` |
+| `06-review-generic` | `06-review/review-generic/` |
 
 No external Skill is mounted here. Academic Research Skills / MedSci Skills are future candidates for **A**, not contents of this package.
