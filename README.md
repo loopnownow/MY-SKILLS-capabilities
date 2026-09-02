@@ -5,31 +5,43 @@ Mountable **generic** capability package for [loopnownow/MY-SKILLS](https://gith
 A = orchestrator + personal lab layer. **B = reusable skills only.**
 Nothing in this repo is auto-mounted. Framework A `registry.yaml` stays `mounts: []` until the user explicitly approves a mount.
 
+Layout is classified by A domain (unlimited depth inside each pack):
+
+```
+02-data-processing/   xlsx, imaging-qc, radiomics-habitat, impute, generic-docs
+03-research/          literature, design, frontier
+04-analysis/          stats-generic, figure-engine
+05-manuscript/        writing-generic
+06-review/            review-generic
+```
+
 ## How A mounts B
 
 1. In MY-SKILLS, `01_skill-discovery-integration` evaluates a candidate and writes an `interface.yaml` contract.
 2. The user explicitly approves (silence is not approval).
-3. A records the id in `core/01_skill-discovery-integration/registry.yaml` `mounts:` as `MOUNTED` and lists it in `core/MOUNTED_SKILLS.md`.
+3. A records the id in `01_skill-discovery-integration/registry.yaml` `mounts:` as `MOUNTED` and lists it in `MOUNTED_SKILLS.md`.
 4. Domain skills call **ids** below, not old `bundles/` paths.
 
 Until step 3, A keeps local generic copies marked in `EXTERNALIZATION_CANDIDATES.md`.
 
-## Mount points (ids)
+## Mount points (ids → paths)
 
-| Id | Use |
-|---|---|
-| `02-xlsx` | Excel/CSV automation |
-| `02-imaging-qc` | Imaging preprocessing QC (no personal MATLAB scripts) |
-| `02-radiomics-habitat` | Radiomics/habitat **preparation** (paper modelling → A `04_analysis`) |
-| `02-impute` | Missing/outlier processing |
-| `02-generic-docs` | Generic imaging/data notes |
-| `03-literature` | Literature / sources / journals / public datasets |
-| `03-design` | Study design / validation / blueprints |
-| `03-frontier` | Frontier themes / idea-to-question |
-| `04-stats-generic` | Generic statistics encyclopaedia |
-| `04-figure-engine` | Figure generation (including journal-family visual style / Nature figure spec) |
-| `05-writing-generic` | Generic writing, reporting, citation, ethics, journal house style |
-| `06-review-generic` | Generic prereview / response machinery |
+| Id | Path | Use |
+|---|---|---|
+| `02-xlsx` | `02-data-processing/xlsx/` | Excel/CSV automation |
+| `02-imaging-qc` | `02-data-processing/imaging-qc/` | Imaging preprocessing QC (no personal MATLAB scripts) |
+| `02-radiomics-habitat` | `02-data-processing/radiomics-habitat/` | Radiomics/habitat **preparation** (paper modelling → A `04_analysis`) |
+| `02-impute` | `02-data-processing/impute/` | Missing/outlier processing |
+| `02-generic-docs` | `02-data-processing/generic-docs/` | Generic imaging/data notes |
+| `03-literature` | `03-research/literature/` | Literature / sources / journals / public datasets |
+| `03-design` | `03-research/design/` | Study design / validation / blueprints |
+| `03-frontier` | `03-research/frontier/` | Frontier themes / idea-to-question |
+| `04-stats-generic` | `04-analysis/stats-generic/` | Generic statistics encyclopaedia |
+| `04-figure-engine` | `04-analysis/figure-engine/` | Figure generation (including journal-family visual style / Nature figure spec) |
+| `05-writing-generic` | `05-manuscript/writing-generic/` | Generic writing, reporting, citation, ethics, journal house style |
+| `06-review-generic` | `06-review/review-generic/` | Generic prereview / response machinery |
+
+Translational / reader-study **design** mounts (when approved) belong under `03-research/` — A personal `clinical-translation` stays in MY-SKILLS; do not copy it here.
 
 This package does **not** contain personal Aitor-format, de-AI, personal review/response style, 0RAD pipeline rules, radiology-stats lab policy, or MATLAB preprocess scripts.
 
