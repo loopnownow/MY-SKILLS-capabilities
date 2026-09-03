@@ -44,7 +44,7 @@ or the latest article list.
 
 | PMID | Journal / date | Paper | What it signals for the skill |
 |---|---|---|---|
-| 37690911 | The Lancet Digital Health, 2023 Oct | Artificial intelligence for breast cancer detection in screening mammography in Sweden: a prospective, population-based, paired-reader, non-inferiority study | Top clinical AI work often tests workflow and reader impact, not just AUC. Use with `转化`, `预审`, and `选刊`. |
+| 37690911 | The Lancet Digital Health, 2023 Oct | Artificial intelligence for breast cancer detection in screening mammography in Sweden: a prospective, population-based, paired-reader, non-inferiority study | Top clinical AI work often tests workflow and reader impact, not just AUC. Use with A personal clinical-translation, `06-review-critique`, and 选刊 (A `03_research` / B `03-lit-search`). |
 | 39904652 | The Lancet Digital Health, 2025 Mar | Screening performance and characteristics of breast cancer detected in the MASAI trial | Strong screening AI papers report clinical screening behavior and trial design details. Use when evaluating mammography or population screening projects. |
 | 39775040 | Nature Medicine, 2025 Mar | Nationwide real-world implementation of AI for cancer detection in population-based mammography screening | Nature Medicine-level clinical AI often includes real-world implementation evidence. Use when judging deployment or top-tier fit. |
 | 40346277 | Nature Medicine, 2025 May | Artificial intelligence improves breast cancer detection in mammography screening | Improvement claims need clinical screening evidence and not only retrospective discrimination. |

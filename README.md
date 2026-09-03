@@ -55,7 +55,7 @@ Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDA
 | `04-fig-plot` | `04-analysis/fig-plot/` | Statistical plots / imaging panels |
 | `05-write-manuscript` | `05-manuscript/write-manuscript/` | Generic writing |
 | `05-write-reporting` | `05-manuscript/write-reporting/` | TRIPOD / CLAIM / CLEAR |
-| `05-write-venue` | `05-manuscript/write-venue/` | Journal selection / house style |
+| `05-write-venue` | `05-manuscript/write-venue/` | Venue templates / house style (not 选刊) |
 | `05-write-polish` | `05-manuscript/write-polish/` | Generic academic English (not de-AI) |
 | `06-review-peer` | `06-review/review-peer/` | Other-paper peer review |
 | `06-review-critique` | `06-review/review-critique/` | Self-audit / pre-submission |
@@ -63,7 +63,7 @@ Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDA
 
 Translational / reader-study **design** mounts (when approved) belong under `03-research/` — A personal `clinical-translation` stays in MY-SKILLS; do not copy it here.
 
-This package does **not** contain personal Aitor-format, de-AI, personal review/response style, 0RAD pipeline rules, radiology-stats lab policy, ethics form packs, or MATLAB preprocess scripts.
+This package does **not** contain personal Aitor-format, de-AI, personal review/response style, 0RAD pipeline rules, A personal stats policy, ethics form packs, or MATLAB preprocess scripts.
 
 ## Safety
 

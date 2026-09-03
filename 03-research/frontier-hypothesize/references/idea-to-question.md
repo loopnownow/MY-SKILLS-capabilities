@@ -13,8 +13,8 @@ Specific increment:   [the one-sentence advance over the best current approach]
 Primary endpoint:     [estimand + metric]
 Comparator:           [radiologist / clinical model / prior biomarker / SOTA]
 Minimum evidence to compete: [validation type, calibration/DCA, reader/external, etc.]
-Target venue tier:    [→ radiology-journal]
-Open-gap check:       [confirm still open — → radiology-search]
+Target venue tier:    [→ A `03_research` journal-selection / B `03-lit-search`]
+Open-gap check:       [confirm still open — → `03-lit-search`]
 ```
 
 ## Writing the "specific increment" (the hardest line)
@@ -32,7 +32,7 @@ under which it beats it, the idea is not yet a question.
 
 - Frame novelty as a **specific gap** ("no prior study validates X across vendors with
   calibration"), not "first/novel" — superlatives invite the reviewer to find a counterexample.
-- A gap claim is only safe **after** a live check that it is still open (→ radiology-search).
+- A gap claim is only safe **after** a live check that it is still open (→ `03-lit-search`).
 - Increment can be in **question, data, method, validation, or mechanism** — be explicit which.
 
 ## Rank the shortlist
@@ -48,6 +48,6 @@ Promote 2–4 questions that score well on all four; park the rest with the reas
 
 ## Handoff
 
-- Full design of the chosen question → `radiology-design`.
-- Venue tiering of the question → `radiology-journal`.
-- Live confirmation of gap + seed papers → `radiology-search` → `radiology-citation`.
+- Full design of the chosen question → `03-design-experiment`.
+- Venue tiering / 选刊 of the question → A `03_research` (journal-selection) / B `03-lit-search`.
+- Live confirmation of gap + seed papers → `03-lit-search` → `03-lit-cite` / `05-write-manuscript` radiology-citation.

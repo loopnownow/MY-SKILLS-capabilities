@@ -58,5 +58,5 @@ Checklist:
 - [ ] Vector (`.svg`, text-as-text) + ≥300 dpi raster; legible at final width.
 - [ ] Simulated/example data flagged; de-identification confirmed for imaging panels.
 
-→ Palettes → `color-systems.md`. The statistics themselves → `radiology-stats`. Whether a figure
-satisfies a reporting checklist → `radiology-reporting`.
+→ Palettes → `color-systems.md`. The statistics themselves → `04-stats-guide` / `04-model-eval`. Whether a figure
+satisfies a reporting checklist → `05-write-reporting`.

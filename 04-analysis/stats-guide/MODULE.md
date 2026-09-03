@@ -17,7 +17,7 @@ Choose an appropriate test and check the assumptions that justify it. This pack 
 teach sample-size/power (→ `04-stats-power`), Bayesian/model implementation (→ `04-stats-models`),
 or the `assumption_checks.py` script (that file lives in `04-stats-models`).
 
-Lab radiology-stats policy stays in A personal.
+Lab stats policy stays in A personal.
 
 ## When to use
 

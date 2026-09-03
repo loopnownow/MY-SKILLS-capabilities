@@ -1,8 +1,9 @@
 # 2023-2026 期刊规律
 
-Use this file with `journal-selection.md` when the user asks where to submit a radiomics,
-medical imaging AI, radiogenomics, or imaging deep learning manuscript and wants advice
-grounded in recent high-impact publication patterns.
+Venue-family **writing** patterns (what a known family tends to reward). This is not a 选刊 SOP.
+
+选刊 / “where to submit” → A `03_research` (journal-selection) and B `03-lit-search`.
+Use this file after a venue family is known, to shape the manuscript — not to pick the journal.
 
 ## Evidence boundary
 
@@ -30,77 +31,9 @@ Representative PMID seeds used for this pattern map include 37690911, 38876123,
 41339572, and 38809149. Use `literature-evidence-2023-2026.md` for the full seed
 table and DOI-level metadata.
 
-## Submission-tier logic
+## Not 选刊
 
-### Tier A: top clinical AI journals
+Ranking journals / “where to submit” is **not** this pack. Use A `03_research` (journal-selection)
+and B `03-lit-search`. The table above is venue-family **writing** context after a family is known.
 
-Examples: Nature Medicine, The Lancet Digital Health, The Lancet Oncology for appropriate
-oncology questions.
-
-Usually needs at least one of:
-
-- prospective, randomized, real-world, or reader-study evidence;
-- strong multicenter external validation;
-- clear effect on clinical pathway or decision-making;
-- broad disease burden or screening/program-level relevance;
-- transparent reporting, calibration, and utility analysis.
-
-### Tier B: strong clinical/translational medical journals
-
-Examples: eClinicalMedicine, EBioMedicine, Cell Reports Medicine, Radiology, npj Digital
-Medicine, npj Precision Oncology depending on topic.
-
-Usually needs:
-
-- clinically meaningful endpoint;
-- robust retrospective or multicenter validation;
-- clear baseline comparison;
-- calibration/decision utility if prediction is claimed;
-- mechanism or precision oncology link when relevant.
-
-### Tier C: focused radiology AI or specialty journals
-
-Usually suitable when:
-
-- study is retrospective and clinically useful but not broad enough for top-tier;
-- external validation is limited or absent but methods are transparent;
-- the paper contributes a disease-specific model, workflow, or reproducibility resource.
-
-## Manuscript-positioning rules
-
-- If no external validation: do not recommend top-tier clinical AI journals as realistic
-  unless the study has another major strength such as prospective reader evidence.
-- If single-center and no reader study: frame as exploratory or model-development work.
-- If multicenter but pooled random split: downgrade because this is not external validation.
-- If radiogenomics/multi-omics: match to npj Precision Oncology, Cell Reports Medicine,
-  or disease-specific translational journals only when pairing and biology are credible.
-- If foundation model: Nature Medicine/Nature Communications-level framing requires scale,
-  generality, external validation, and reusable contribution.
-- If clinical utility is claimed: require calibration, DCA/net benefit, threshold-action logic,
-  and ideally reader/workflow evidence.
-
-## Output rule
-
-```text
-文献规律驱动的选刊判断
-- 证据来源边界：
-- 文章当前证据等级：
-- 与近三年高水平期刊规律的差距：
-
-期刊梯队
-| 梯队 | 期刊 | 近三年规律匹配 | 当前短板 | 投稿前升级动作 |
-
-不建议直接投的期刊
-| 期刊 | 原因 |
-
-需要当天核验
-- scope, author instructions, data/code policy, article type, similar recent papers
-```
-
-## Red lines
-
-- Do not promise acceptance.
-- Do not rank only by impact factor.
-- Do not use a seed paper as proof that the user's weaker design fits the same journal.
-- Do not invent journal policies, APCs, turnaround times, or recent publications.
-- Do not hide single-center, no-external-validation, or AUC-only limitations.
+Do not promise acceptance. Do not rank by impact factor from this file.

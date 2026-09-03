@@ -3,14 +3,14 @@
 Pick the template that matches the clinical question. For each, the **minimum-viable (MVP)**
 version is what is publishable now; the **stronger** version is what reaches a higher tier.
 Every blueprint must end with a validation plan (validation-strategy.md) and a reporting
-guideline (→ radiology-reporting).
+guideline (→ `05-write-reporting`).
 
 ## 1. Diagnostic accuracy (test vs reference standard)
 - **Question:** does the imaging/AI test correctly classify disease vs a reference standard?
 - **MVP:** prospective or consecutive retrospective cohort, credible reference standard,
   sensitivity/specificity/AUC with CIs, real prevalence reported.
 - **Stronger:** multi-reader comparison (radiologist vs AI vs radiologist+AI), external cohort,
-  reader study (→ radiology-translation).
+  reader study (→ A personal / `03-clinical`).
 - **Guideline:** STARD 2015 (+ CLAIM if AI); QUADAS-2 if part of a review.
 
 ## 2. Prediction / prognosis model
@@ -34,29 +34,29 @@ guideline (→ radiology-reporting).
   cases shown.
 - **Stronger:** multi-center/scanner test, inter-observer reference, downstream-task impact
   (does better segmentation improve the clinical endpoint?).
-- **Guideline:** CLAIM; report annotation protocol (→ radiology-annotation).
+- **Guideline:** CLAIM; report annotation protocol (→ `02-imaging-qc`).
 
 ## 5. Radiomics signature
 - **Question:** do hand-crafted features predict the endpoint?
 - **MVP:** IBSI-compliant features, segmentation reproducibility (ICC), feature selection
   **inside** training only, model + calibration, internal validation.
-- **Stronger:** external validation, biological correlate (→ radiology-radiogenomics),
+- **Stronger:** external validation, biological correlate (→ `02-radiomics-habitat` / `03-design-experiment`),
   comparison vs deep features or clinical model.
-- **Guideline:** CLEAR (reporting) + METRICS/RQS (quality) + IBSI. (→ radiology-radiomics)
+- **Guideline:** CLEAR (reporting) + METRICS/RQS (quality) + IBSI. (→ `02-radiomics-habitat`)
 
 ## 6. Radiogenomics / imaging-multi-omics
 - **Question:** what biology underlies an imaging phenotype?
 - **MVP:** matched imaging∩omics cohort (state the intersection n), FDR-controlled association,
   bounded interpretation.
 - **Stronger:** independent validation cohort, multi-omics integration, single-cell/spatial
-  linkage via habitats. (→ radiology-radiogenomics)
+  linkage via habitats. (→ `02-radiomics-habitat`)
 - **Guideline:** CLEAR/IBSI for imaging side; document omics accessions.
 
 ## 7. Reader / clinical-utility study
 - **Question:** does AI change radiologist performance or workflow?
 - **MVP:** MRMC design, washout, with/without AI, reader experience reported.
 - **Stronger:** prospective, real-workflow, time and confidence outcomes, harm analysis.
-- **Guideline:** CLAIM + reader-study stats (MRMC → radiology-stats). (→ radiology-translation)
+- **Guideline:** CLAIM + reader-study stats (MRMC → `04-stats-guide`). (→ A personal / `03-clinical`)
 
 ## Blueprint output skeleton
 
@@ -70,6 +70,6 @@ MVP version:        [what's publishable now]
 Stronger version:   [what raises the tier] + extra cost
 Unit of analysis:   patient / lesion / slice  (default: patient)
 Validation:         [→ validation-strategy.md]
-Reporting guideline:[→ radiology-reporting]
+Reporting guideline:[→ `05-write-reporting`]
 Binding constraint: [the one number everything hinges on]
 ```

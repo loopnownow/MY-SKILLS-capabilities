@@ -21,7 +21,8 @@ Discussion). This pack is **generic IMRAD only**.
 - de-AI forbidden lists and detectors
 - Lab ethics IRB wording and author-line defaults
 - Language polish → [`05-write-polish`](../write-polish/MODULE.md)
-- Journal selection / house style → [`05-write-venue`](../write-venue/MODULE.md)
+- Venue house style / article shape → [`05-write-venue`](../write-venue/MODULE.md)
+- 选刊 / where to submit → A `03_research` (journal-selection) / B `03-lit-search`
 - TRIPOD / CLAIM / CLEAR checklists → [`05-write-reporting`](../write-reporting/MODULE.md)
 - Self-audit → `06-review-critique`; other-paper review → `06-review-peer`; response → `06-review-response`
 

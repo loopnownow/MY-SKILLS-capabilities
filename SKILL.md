@@ -16,7 +16,7 @@ Reusable professional modules extracted from MY-SKILLS. Independent of:
 - Skill Harvest / evolution governance
 - personal writing style (Aitor-format, de-AI, corpus)
 - personal review/response style
-- personal statistical policies (`radiology-stats`, `0rad-pipeline-rules`)
+- personal statistical policies (A personal stats / 0RAD pipeline rules)
 
 Mount-point table (id → classified path; unlimited depth inside each pack):
 

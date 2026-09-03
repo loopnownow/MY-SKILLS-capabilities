@@ -134,7 +134,7 @@ def plot_dca(ax, thresholds, net_benefit_model, nb_all, nb_none=0):
 ```
 
 Compute the statistics (AUC CIs, DeLong, calibration slope, net benefit) with
-`radiology-stats`; this file is about rendering them correctly.
+`04-stats-guide` / `04-model-eval`; this file is about rendering them correctly.
 
 ---
 
@@ -231,6 +231,6 @@ def breslow_S0(t,e,lp,grid):                        # baseline survival for a Co
 # survival DCA at t: nb(p) = (n_flag/N)*( ev - (1-ev)*p/(1-p) ), ev = 1 - KM_t within {risk>p};
 #                    clip the y-axis to the decision band (treat-all dives steeply negative)
 ```
-Statistics (AUC 95% CI by bootstrap, C-index, NRI/IDI, calibration slope) -> `radiology-stats`;
+Statistics (AUC 95% CI by bootstrap, C-index, NRI/IDI, calibration slope) -> `04-stats-models` / `04-model-eval`;
 this file renders them. KM/ROC/calibration/DCA must use the **same** palette roles as the rest of
 the figure set (`figure-set-consistency.md`).

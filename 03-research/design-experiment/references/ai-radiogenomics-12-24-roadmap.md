@@ -23,12 +23,12 @@ The strongest 12-24 month projects usually have:
 
 | Time window | Goal | Expected outputs | Skills to route |
 |---|---|---|---|
-| 0-3 months | Define clinical problem, endpoint, reference standard, inclusion/exclusion, data dictionary, governance | Protocol, data-flow diagram, label SOP, draft SAP | `radiology-design`, `radiology-ethics`, `radiology-reporting` |
-| 3-6 months | Build frozen research cohort, de-identification, split plan, imaging QC, segmentation/ROI pipeline | Cohort lock, QC report, baseline radiomics pipeline | `radiology-data`, `radiology-annotation`, `radiology-radiomics` |
+| 0-3 months | Define clinical problem, endpoint, reference standard, inclusion/exclusion, data dictionary, governance | Protocol, data-flow diagram, label SOP, draft SAP | `03-design-experiment`, `05-write-manuscript` radiology-ethics, `05-write-reporting` |
+| 3-6 months | Build frozen research cohort, de-identification, split plan, imaging QC, segmentation/ROI pipeline | Cohort lock, QC report, baseline radiomics pipeline | A personal (data), `02-imaging-qc`, `02-radiomics-habitat` |
 | 6-9 months | Establish strong baselines: clinical model, IBSI radiomics, CNN/ViT or nnU-Net model | Reproducible baseline, internal test, failure-case library | `04-stats-guide`, `04-fig-plot` |
-| 9-12 months | Add multimodal fusion and trustworthiness modules | First method paper draft; calibration/UQ/XAI; pre-external-test model card | `radiology-radiogenomics`, `radiology-deep-learning`, `radiology-writing` |
-| 12-18 months | External/multicenter/temporal validation; site heterogeneity analysis; optional federated/split-learning prototype | External validation paper, center-effect analysis, model card | `radiology-design`, `radiology-stats`, `radiology-prereview` |
-| 18-24 months | Silent deployment, reader-assist, workflow/time/error endpoint, or prospective validation preparation | Prospective/reader study, CLAIM/TRIPOD/STARD package, regulatory-readiness notes | `radiology-translation`, `radiology-reporting`, `radiology-journal` |
+| 9-12 months | Add multimodal fusion and trustworthiness modules | First method paper draft; calibration/UQ/XAI; pre-external-test model card | `02-radiomics-habitat` / `03-design-experiment`, A personal (DL), `05-write-manuscript` |
+| 12-18 months | External/multicenter/temporal validation; site heterogeneity analysis; optional federated/split-learning prototype | External validation paper, center-effect analysis, model card | `03-design-experiment`, `04-stats-guide` / `04-model-eval`, `06-review-critique` |
+| 18-24 months | Silent deployment, reader-assist, workflow/time/error endpoint, or prospective validation preparation | Prospective/reader study, CLAIM/TRIPOD/STARD package, regulatory-readiness notes | A personal (`03-clinical`), `05-write-reporting`, A `03_research` (journal-selection) / B `03-lit-search` |
 
 ## Topic templates with high fit
 

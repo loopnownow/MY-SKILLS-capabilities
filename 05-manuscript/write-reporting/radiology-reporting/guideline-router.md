@@ -30,8 +30,8 @@ A "yes" to several is normal. Stack them.
 | Radiomics model whose endpoint is sensitivity/specificity for a lesion | CLEAR + IBSI + STARD (+ TRIPOD+AI if a model score is reported) |
 | Deep-learning segmentation tool | CLAIM 2024 (segmentation metrics: DSC, HD95, surface metrics) |
 | Meta-analysis of CT radiomics for cancer diagnosis | PRISMA-DTA + QUADAS-2 + (RQS to grade primary studies) |
-| Prospective reader study with vs. without AI | STARD + MRMC design (see radiology-stats) + (CONSORT-AI if randomised) |
-| Radiogenomics: imaging features ↔ RNA-seq | CLEAR + IBSI for imaging; + multi-omics/leakage rules (radiology-radiogenomics); TRIPOD+AI if a predictive model is built |
+| Prospective reader study with vs. without AI | STARD + MRMC design (see `04-stats-guide`) + (CONSORT-AI if randomised) |
+| Radiogenomics: imaging features ↔ RNA-seq | CLEAR + IBSI for imaging; + multi-omics/leakage rules (`02-radiomics-habitat` / `03-design-experiment`); TRIPOD+AI if a predictive model is built |
 | Any of the above, submitted to a Nature-portfolio journal | same stack **+ Reporting Summary/Editorial Policy Checklist** (`nature-reporting-summary.md`) **+** FUTURE-AI as the trustworthy/deployable-AI framing where clinical deployment is discussed |
 
 ## Step 3 — separate the three jobs
@@ -47,8 +47,8 @@ A "yes" to several is normal. Stack them.
   reporting checklist — use it to frame Discussion claims about clinical readiness and to check
   that explainability/robustness/fairness were addressed somewhere in the study, not only in the
   reporting checklist items that happen to touch them (CLAIM/TRIPOD+AI's fairness item is
-  narrower). Cross-ref `radiology-deep-learning/interpretability-uncertainty.md`（该模块尚未建立，暂无内容） and
-  `../03_research/clinical-translation/prospective-deployment.md` (monitoring/drift already lives there).
+  narrower). Cross-ref A personal (interpretability is not a B id) and
+  A personal `03-clinical` / clinical-translation (monitoring/drift).
 
 Authors often confuse "we scored well on RQS" with "we are unbiased (PROBAST)". They are
 different axes. Report the reporting guideline as the backbone; use quality/RoB tools to
@@ -68,7 +68,7 @@ strengthen Methods, FUTURE-AI to frame deployability, and pre-empt reviewer crit
   **Editorial Policy Checklist** (→ `nature-reporting-summary.md`).
 - Plan the **Extended Data / Supplementary Information / Source Data** split
   (→ `04-fig-plot` (`nature-figure-spec.md`)).
-- See `radiology-journal/submission-logistics.md`（该模块尚未建立，暂无内容） for the venue-specific pre-flight checklist.
+- Venue-specific pre-flight / 选刊 logistics → A `03_research` (journal-selection); house style → `05-write-venue`.
 
 ## Edge cases
 
