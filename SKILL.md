@@ -16,7 +16,7 @@ Reusable professional modules extracted from MY-SKILLS. Independent of:
 - Skill Harvest / evolution governance
 - personal writing style (Aitor-format, de-AI, corpus)
 - personal review/response style
-- personal statistical policies (`radiology-stats`, `0rad-pipeline-rules`)
+- personal statistical policies (A personal stats / 0RAD pipeline rules)
 
 Mount-point table (id → classified path; unlimited depth inside each pack):
 
@@ -50,6 +50,8 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 | `06-review-peer` | `06-review/review-peer/` |
 | `06-review-critique` | `06-review/review-critique/` |
 | `06-review-response` | `06-review/review-response/` |
+
+`02-tables` is clinical Excel/CSV (headers, missingness, ID, cohort). Nested `xlsx-office/` is the Anthropic office/xlsx skill; nested `impute/` is fill/outlier implementation.
 
 `04-explainability` and `05-humanize` are not in this package.
 

@@ -78,4 +78,4 @@ Main reviewer risk:
 Live verification needed:
 ```
 
-Concrete papers, dataset status, and regulatory facts must be verified with `radiology-search` before citation.
+Concrete papers, dataset status, and regulatory facts must be verified with `03-lit-search` before citation.

@@ -5,12 +5,14 @@
 用法：修改配置后运行
 """
 
+import os
+
 import pandas as pd
 import numpy as np
 
 # ==================== 配置区（软编码，置顶） ====================
-DATA_FILE = r"F:\Paper\SCH_barin\data_outliers.xlsx"  # 输入数据
-OUTPUT_FILE = r"F:\Paper\SCH_barin\data_imputed.xlsx" # 输出
+DATA_FILE = os.environ.get("DATA_FILE", r"path/to/data.xlsx")  # 输入数据
+OUTPUT_FILE = os.environ.get("OUTPUT_FILE", r"path/to/data_imputed.xlsx")  # 输出
 GROUP_COL = "Group"                              # 分组列（可选）
 IMPUTE_METHOD = "mice"                           # mice / mean / median
 IMPUTE_COLS = None                               # 指定列（None=全部数值列）

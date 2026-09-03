@@ -16,6 +16,9 @@ owner: "02-data-processing/tables/impute/MODULE.md"
 Reusable CLI + library for **group-stratified imputation + decimal alignment + backup/QC**.
 Nested under `02-tables`. Not an analysis-domain pack.
 
+Header / ID / cohort QC before fill → parent [`../MODULE.md`](../MODULE.md).
+Spreadsheet XML packing → [`../xlsx-office/`](../xlsx-office/). Do not treat this nested pack as modelling.
+
 Lab pipeline copies of the imputer stay in **A personal**. Prefer this pack's `scripts/` unless
 the user points at a project-local module.
 

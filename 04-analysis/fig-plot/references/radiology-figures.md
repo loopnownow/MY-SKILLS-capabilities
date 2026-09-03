@@ -117,7 +117,7 @@ Each legend should state:
 
 ## Common missing figures
 
-- Patient flow diagram.
+- Patient flow diagram (→ `04-fig-flow`, not this pack).
 - External validation performance.
 - Calibration curve.
 - Decision curve analysis.

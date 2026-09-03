@@ -15,7 +15,7 @@ u_impute.py — 分组分层缺失值插补
       - 更少树 / 更浅树 / 更少迭代（见 §1 默认参数）
 
 独立运行：
-    python -m modules.u_impute
+    python impute_excel.py --input path/to/data.xlsx --sheet cln --group Group --method mice
 ═══════════════════════════════════════════════════════════════════
 """
 

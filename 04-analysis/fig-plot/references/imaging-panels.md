@@ -57,11 +57,11 @@ def montage(images, rows, cols, labels=None, wlww=None, panel_letters=True, figw
 
 ## Caption must define
 modality/sequence, plane, WL/WW, arrows/symbols, scale, overlay meaning + colorbar units, and
-that images are de-identified. (Prose → `radiology-writing`.)
+that images are de-identified. (Prose → `05-write-manuscript`.)
 
-## Not a patient-flow figure (type C)
+## Not a patient-flow figure
 
-Annotated imaging montages are **not** STROBE diagrams. Do not call
-`scripts/draw_strobe_flow.py` for methods pipelines, specimen-to-model cartoons, or
-radiomics-step figures. Those are type C (`methods-pipeline.md`). Patient selection is
-type A (`patient-flow.md`).
+Annotated imaging montages are **not** STROBE diagrams. Enrolment / patient-selection
+(type A), study-workflow (type B), and methods-pipeline cartoons (type C) belong in
+`04-fig-flow`. `patient-flow.md`, `methods-pipeline.md`, and `scripts/draw_strobe_flow.py`
+live there — they are not local to fig-plot.

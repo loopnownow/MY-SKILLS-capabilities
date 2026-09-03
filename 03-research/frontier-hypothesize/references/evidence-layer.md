@@ -3,7 +3,7 @@
 This file encodes **how high-impact venues tend to publish imaging-AI work** so recommendations
 are grounded in evidence, not taste. It is deliberately **citation-free**: durable patterns are
 stated here; concrete recent papers (PMID/DOI) are retrieved and verified **live** via
-`radiology-search`. Never present a specific paper from memory as verified.
+`03-lit-search`. Never present a specific paper from memory as verified.
 
 ## How to use this layer honestly
 
@@ -24,8 +24,8 @@ stated here; concrete recent papers (PMID/DOI) are retrieved and verified **live
 | **eClinicalMedicine / eBioMedicine** (clinical/translational) | Clinically useful, translational studies | Clear clinical question, adequate validation |
 
 > These are **patterns**, not guarantees. Scope, fit, and current preferences must be checked
-> against the journal's live aims (see `radiology-search` and `radiology-citation` scope files),
-> and journal tiering for a finished paper belongs to `radiology-journal`.
+> against the journal's live aims (see `03-lit-search` and `05-write-manuscript` radiology-citation),
+> and 选刊 / journal tiering for a finished paper belongs to A `03_research` (journal-selection) / B `03-lit-search`.
 
 ## Cross-cutting patterns that travel across venues (2023–2026 direction of travel)
 
@@ -52,5 +52,5 @@ stated here; concrete recent papers (PMID/DOI) are retrieved and verified **live
 Direction:
 Publication pattern (venue tier + what it rewards + the bar):
 Does the user's question clear the bar? (yes / conditional / no — why):
-Verify now (live search):  query → confirm gap → fetch & verify seed PMIDs (→ radiology-search)
+Verify now (live search):  query → confirm gap → fetch & verify seed PMIDs (→ `03-lit-search`)
 ```

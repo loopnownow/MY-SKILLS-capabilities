@@ -50,7 +50,7 @@ clusters and the questions that catch the most problems.
   specificity at a *pre-specified* threshold, PPV/NPV with prevalence; segmentation: DSC,
   HD95/surface metrics; detection: FROC/sensitivity per lesion at given FP rate).
 - **Uncertainty**: confidence intervals; method for CIs.
-- Statistical comparison method (e.g. DeLong for AUCs) — see radiology-stats.
+- Statistical comparison method (e.g. DeLong for AUCs) — see `04-stats-guide` / `04-model-eval`.
 - **Calibration** and **clinical utility** (decision-curve) for prediction models.
 - Robustness / subgroup / failure-mode analysis.
 
@@ -67,7 +67,7 @@ clusters and the questions that catch the most problems.
 
 ## Open science
 - **Code, model, and data availability** statements — specific routes, not "on request"
-  alone (cross-ref radiology-data).
+  alone (cross-ref A personal).
 
 ## CLAIM audit output (per item)
 `Item | Requirement | PRESENT/PARTIAL/MISSING/NA | Location | Fix`

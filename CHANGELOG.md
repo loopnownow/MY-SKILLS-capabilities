@@ -1,8 +1,31 @@
 # Changelog
 
+## 2026-09-03 — clinical tables front (paired A change CHG-20260903-015)
+
+Author: Aitor. Branch: `fix/audit-p1-20260903` (extends PR #6). Does not merge to main.
+
+- `02-tables` **front** (`MODULE.md` + `SKILL.md`) is clinical Excel/CSV: headers, missingness, ID integrity, cohort columns (`training`/`test`; validation = external only; never Development set). Modelling → 04. HIS login never here.
+- Anthropic office/xlsx skill (financial models, 10-K sources, blue-input color conventions, `scripts/office`, `recalc.py`) moved to nested `02-data-processing/tables/xlsx-office/` with its own MODULE.md + thin SKILL.md. `LICENSE.txt` stays with that nested pack.
+- Nested `impute/` kept. Env-only soft-coding from CHG-20260903-014 not undone. Links only: parent clinical QC; `xlsx-office/` for XML packing.
+- Imaging data-availability `data.md` moved to `02-data-processing/imaging-io/data.md`; imaging-io MODULE points at it. Dealbreaker availability pointer follows. Dropped misplaced reporting `tables/checklists.md` (CLAIM/TRIPOD live in `05-write-reporting`).
+- README `02-tables` mount blurb updated. Front MODULE has no financial-model color section.
+
+
+## 2026-09-03 — leftover P1 (paired A change CHG-20260903-014)
+
+Author: Aitor. Branch: `fix/audit-p1-20260903`. Does not merge to main.
+
+- `02-tables` nested `impute/`: CONFIG-on-top soft-coding in `export_u_impute.py` / `u_outlier_detection.py` (`os.environ` + `path/to/…` placeholders; no `F:\Paper\…` paths). Dropped leftover `python -m modules.u_impute` 0RAD layout docs; generic CLI kept. Anthropic `02-tables` MODULE body not rewritten.
+- `02-imaging-qc`: deleted `notes/` (读论文 notes, not ROI QC). MODULE no longer links into `notes/`. Reader/mask QC refs under `references/` kept.
+- `04-fig-plot`: leftover local STROBE / patient-flow / `draw_strobe_flow` pointers hand off to `04-fig-flow`. Live `radiology-stats` mentions replaced with `04-stats-guide` / `04-stats-models` / `04-model-eval` or A personal.
+- Live old umbrella identities (`radiology-stats`, `radiology-deep-learning`, `radiology-radiogenomics`, `radiology-translation`, `radiology-data`, `radiology-writing`, `radiology-reporting`, `06_review` handoff, `manuscript-core/references/merged/…`) swept to the 28 B ids or “A personal”.
+- Broken `nature-family-shape.md` links: write-manuscript `article-architecture.md` and fig-plot `nature-figure-spec.md` now point at `05-write-venue` `radiology-writing/nature-family-shape.md`.
+- `05-write-venue`: venue templates / house style for writing, **not** 选刊 (paired A: 选刊 is 03 not 05). 选刊 / where to submit → A `03_research` (journal-selection) / B `03-lit-search`. Folder kept.
+
+
 ## 2026-09-03 — audit-fix (paired A change CHG-20260903-013)
 
-Author: Aitor. Branch: `fix/audit-20260903`. Does not merge to main.
+Author: Aitor. Branch: `fix/audit-20260903`. Merged as PR #5 (`c9efb8d`).
 
 ### P0
 

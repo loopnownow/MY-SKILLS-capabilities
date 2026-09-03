@@ -21,3 +21,10 @@ Read, convert, and organise volumetric series. QC / ROI / reader protocol lives 
 6. **Hand off** masks/readers to `02-imaging-qc`. Do not extract radiomics here.
 
 Backup sources (not vendored): Scientific `pydicom` / `bids` / `imaging-data-commons`; MedSci `preprocess-imaging`.
+
+## Data availability
+
+Imaging formats, labels, masks, privacy, repositories, and availability wording:
+[data.md](data.md). That file is **not** the `02-tables` clinical-Excel front.
+
+Clinical Excel/CSV (headers, missingness, ID, cohort) → `02-tables`.

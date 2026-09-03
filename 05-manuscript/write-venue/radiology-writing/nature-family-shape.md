@@ -17,12 +17,12 @@ rebuilding a structured abstract into an unstructured one is easy but not the re
 | Abbreviations in abstract | Defined at first use | Avoid entirely except universally recognised ones (DNA, RNA, MRI); spell out the rest |
 | Summary statement (1 sentence) | **Required** | Does not exist as a named element — fold the equivalent single-sentence claim into the last sentence of the abstract instead |
 | Key Results box (≤3, ≤75 words) | **Required** | Does not exist — some venues instead want a separate one-line **significance/teaser** for internal editorial use; ask the user for it only if the target venue requires one, don't invent the box |
-| Title | Concrete, modality + finding | Often shorter and more declarative/punchy; still no "novel"/"first" without a live literature check (→ radiology-frontier/radiology-search) |
+| Title | Concrete, modality + finding | Often shorter and more declarative/punchy; still no "novel"/"first" without a live literature check (→ `03-frontier-ideate` / `03-lit-search`) |
 | Main-text word limit | Verify current limit | Typically tighter than _Radiology_ and **excludes** Methods (see below) — verify live per venue |
 | Methods placement | Inline, ordered section (see methods.md) | Frequently placed **after References**, online-only, not counted in the main word limit — still needs the same content (design, cohort, technique, model/statistics) and the same reporting-guideline coverage; check the specific venue's current instructions for placement |
-| Display items in main text | Figures/tables within journal limits | A **small number of main display items** (figures/tables); everything else goes to **Extended Data** (peer-reviewed, published) or **Supplementary Information** (not typeset) — verify the current cap live; hand off figure-count planning to `04-fig-plot`/`nature-figure-spec.md` and `radiology-data` |
-| Reference style | Author–year or numbered per _Radiology_ house style | Numbered, in order of first citation (Vancouver-style superscripts) — hand off to `radiology-citation`/`export-formats.md` |
-| Statistics disclosure | Reported in Methods/Results prose | Prose **plus** a separate **Reporting Summary** for life-sciences submissions (→ `radiology-reporting/nature-reporting-summary.md`（该文件尚未创建）) |
+| Display items in main text | Figures/tables within journal limits | A **small number of main display items** (figures/tables); everything else goes to **Extended Data** (peer-reviewed, published) or **Supplementary Information** (not typeset) — verify the current cap live; hand off figure-count planning to `04-fig-plot`/`nature-figure-spec.md` and A personal |
+| Reference style | Author–year or numbered per _Radiology_ house style | Numbered, in order of first citation (Vancouver-style superscripts) — hand off to `05-write-manuscript` `radiology-citation/export-formats.md` |
+| Statistics disclosure | Reported in Methods/Results prose | Prose **plus** a separate **Reporting Summary** for life-sciences submissions (→ `05-write-reporting`) |
 
 ## Abstract (unstructured, one paragraph)
 
@@ -53,7 +53,7 @@ sentence's own wording should make its role obvious.
 > molecular risk assessment before tissue is available.
 
 Keep the word count against the **specific target venue's current limit** — do not assume 150
-words applies beyond Nature Medicine without checking (→ radiology-search / the venue's current
+words applies beyond Nature Medicine without checking (→ `03-lit-search` / the venue's current
 author instructions).
 
 ## Introduction / Discussion pacing
@@ -65,8 +65,8 @@ author instructions).
 - **Discussion** keeps the same discipline as `discussion.md` (key finding first, no new results,
   honest limitations, bounded conclusion) — Nature-family venues do **not** relax the limitations
   requirement; if anything, external/prospective evidence and fairness/subgroup performance are
-  scrutinised harder (→ `radiology-deep-learning/interpretability-uncertainty.md`（该模块尚未建立，暂无内容） for AI-specific
-  claims, `radiology-translation` for clinical-utility claims).
+  scrutinised harder (→ A personal for AI-specific
+  claims, A personal / `03-clinical` for clinical-utility claims).
 - Avoid the _Radiology_-specific labels ("Summary statement", "Key Results") anywhere in the prose
   itself — an editor will read past them, but they signal the wrong house style at a glance.
 
@@ -74,7 +74,7 @@ author instructions).
 
 The content requirements are identical to `methods.md` — design/ethics, participants, technique,
 reference standard/readers, model/feature pipeline, statistical analysis — reporting-guideline
-coverage (CLAIM/TRIPOD+AI/CLEAR/STARD, → `radiology-reporting`) does not relax because Methods runs
+coverage (CLAIM/TRIPOD+AI/CLEAR/STARD, → `05-write-reporting`) does not relax because Methods runs
 online-only. Write it with clear subheadings (Nature-family Methods sections are typically broken
 into short, labelled subsections rather than one continuous block) and keep it reproducible enough
 to stand alone from the main text.
@@ -86,16 +86,15 @@ to stand alone from the main text.
    limit live if not already confirmed for this venue).
 3. **`Claim–evidence map`** — unchanged from the main workflow.
 4. **`Display-item plan`** — which results go to main figures/tables vs Extended Data/Supplementary
-   Information (→ `../../../04-analysis/fig-plot/references/nature-figure-spec.md`, `radiology-data`).
+   Information (→ `../../../04-analysis/fig-plot/references/nature-figure-spec.md`, A personal).
 5. **`Reporting check`** — checklist items **plus** whether a Reporting Summary is required for this
-   venue (→ `radiology-reporting/nature-reporting-summary.md`（该文件尚未创建）).
+   venue (→ `05-write-reporting`).
 
 ## Handoffs
 - Figure sizing, panel-letter case, Extended Data figure limits → `04-fig-plot` /
   `../../../04-analysis/fig-plot/references/nature-figure-spec.md`.
 - Source Data, Extended Data vs Supplementary Information, data/code as a condition of publication
-  → `radiology-data`.
-- Reporting Summary / Editorial Policy Checklist → `radiology-reporting` /
-  `references/nature-reporting-summary.md`（该文件尚未创建）.
-- Numbered reference style, export format → `radiology-citation`.
-- Venue fit and current word/figure limits (verify live) → `radiology-journal`.
+  → A personal.
+- Reporting Summary / Editorial Policy Checklist → `05-write-reporting`.
+- Numbered reference style, export format → `05-write-manuscript` radiology-citation.
+- 选刊 / venue fit → A `03_research` (journal-selection) / B `03-lit-search`. Word/figure limits (house style) → this pack.

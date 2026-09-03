@@ -1,11 +1,19 @@
 ---
 name: "write-venue"
 domain: "05_manuscript"
-trigger: ["选刊", "期刊体例", "Nature family", "house style"]
-outputs: ["venue_fit"]
+trigger: ["期刊体例", "Nature family", "house style", "venue template"]
+outputs: ["venue_shape"]
 owner: "05-manuscript/write-venue/MODULE.md"
 ---
 
-# Journal / conference venue
+# Venue templates / house style
 
-Target-journal selection and house-style. Not a personal house-format pack (that stays in A).
+This pack is **venue templates and house style for writing** after a target journal family
+is known (Radiology-family vs Nature-family article shape, house voice, word/figure-budget
+conventions).
+
+It is **not** journal selection / 选刊 / “where to submit.” Route those to A `03_research`
+(journal-selection) and B `03-lit-search` (search/evidence). Do not treat this id as a 选刊 SOP.
+
+House-style files: `radiology-writing/`, `radiology-polishing/radiology-house-style.md`,
+`journal-patterns-2023-2026.md` (venue-family writing patterns, not a submit-here list).

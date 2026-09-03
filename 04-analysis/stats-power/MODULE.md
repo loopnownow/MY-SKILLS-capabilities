@@ -8,4 +8,4 @@ owner: "04-analysis/stats-power/MODULE.md"
 
 # Sample size / power
 
-Generic effect-size and power notes. Lab 0RAD / radiology-stats policy stays in A `04_analysis/personal/`.
+Generic effect-size and power notes. Lab 0RAD / stats policy stays in A personal.

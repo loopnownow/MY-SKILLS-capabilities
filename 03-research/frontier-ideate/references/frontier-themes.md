@@ -2,7 +2,7 @@
 
 A theme is only a frontier *for a given dataset*. For each, the question is not "is it hot?" but
 "can this data carry it, and is the gap still open?" Verify currency with live search
-(→ radiology-search); treat the list as orientation, not a closed taxonomy.
+(→ `03-lit-search`); treat the list as orientation, not a closed taxonomy.
 
 | Theme | What it is | Data prerequisites | Common failure / when to avoid |
 |---|---|---|---|
@@ -15,12 +15,12 @@ A theme is only a frontier *for a given dataset*. For each, the question is not 
 | **Domain adaptation / harmonisation** | Transport across scanners/sites | Multi-center/scanner data | Calling random-mixed held-out folds "external" |
 | **Federated learning** | Multi-center training without sharing data | Real multi-site governance + heterogeneity | Reproducibility and heterogeneity under-reported |
 | **Generative (synthesis/augmentation)** | Synthetic images, denoising, super-resolution, harmonisation | Task where synthesis has a defined downstream benefit | Synthetic data inflating performance; no real-data validation |
-| **Uncertainty / OOD / safety** | Calibrated confidence, out-of-distribution detection | A defined deployment distribution to test against | Uncertainty reported but never acted on (→ `radiology-deep-learning/interpretability-uncertainty.md`（该模块尚未建立，暂无内容） for execution) |
-| **Interpretability / mechanism** | Saliency, concept attribution, radiogenomics | For mechanism: **matched** imaging+omics (→ radiology-radiogenomics) | Over-interpreting saliency maps as biology (→ `radiology-deep-learning/interpretability-uncertainty.md`（该模块尚未建立，暂无内容） for execution) |
+| **Uncertainty / OOD / safety** | Calibrated confidence, out-of-distribution detection | A defined deployment distribution to test against | Uncertainty reported but never acted on (→ A personal for execution) |
+| **Interpretability / mechanism** | Saliency, concept attribution, radiogenomics | For mechanism: **matched** imaging+omics (→ `02-radiomics-habitat` / `03-design-experiment`) | Over-interpreting saliency maps as biology (→ A personal for execution) |
 | **Radiogenomics / imaging-multi-omics** | Imaging phenotype ↔ molecular biology | Matched imaging∩omics intersection (the binding constraint) | Non-matched public omics written up as direct validation |
-| **Liquid biopsy / ctDNA ↔ imaging** | Correlate circulating tumour DNA (burden, variant fraction, methylation signal) or other liquid-biopsy analytes with imaging phenotype/burden/habitat | Matched imaging + plasma-sampling timepoint per patient (same timing-mismatch discipline as tissue radiogenomics) | Treating a single plasma draw as representative of whole-body burden; ignoring assay LOD/sensitivity at low tumour fraction — bound claims the way `radiology-radiogenomics/sample-to-image-mapping.md`（该模块尚未建立，暂无内容） bounds tissue-based claims |
-| **Pathology-foundation-model × imaging fusion** | Joint embeddings from a pretrained histopathology foundation model and a radiology-imaging encoder/radiomics | Matched whole-slide imaging + radiology imaging per patient, both usable-quality | Small matched-n overfitting (same risk profile as radiogenomics); asserting a joint embedding is "explainable" without checking what it actually weights (→ `radiology-deep-learning/interpretability-uncertainty.md`（该模块尚未建立，暂无内容）) |
-| **AI + reader / prospective / RWE** | Clinical-utility, reader studies, prospective validation | Reader pool / prospective enrolment path | Retrospective AUC claimed as clinical readiness (→ radiology-translation) |
+| **Liquid biopsy / ctDNA ↔ imaging** | Correlate circulating tumour DNA (burden, variant fraction, methylation signal) or other liquid-biopsy analytes with imaging phenotype/burden/habitat | Matched imaging + plasma-sampling timepoint per patient (same timing-mismatch discipline as tissue radiogenomics) | Treating a single plasma draw as representative of whole-body burden; ignoring assay LOD/sensitivity at low tumour fraction — bound claims the way A personal bounds tissue-based claims |
+| **Pathology-foundation-model × imaging fusion** | Joint embeddings from a pretrained histopathology foundation model and a radiology-imaging encoder/radiomics | Matched whole-slide imaging + radiology imaging per patient, both usable-quality | Small matched-n overfitting (same risk profile as radiogenomics); asserting a joint embedding is "explainable" without checking what it actually weights (→ A personal) |
+| **AI + reader / prospective / RWE** | Clinical-utility, reader studies, prospective validation | Reader pool / prospective enrolment path | Retrospective AUC claimed as clinical readiness (→ A personal / `03-clinical`) |
 
 ## Fit test (apply to every candidate)
 

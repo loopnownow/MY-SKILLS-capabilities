@@ -32,8 +32,6 @@ bilingual reader. Full-text retrieve is `03-lit-fulltext`. I/O is `02-imaging-io
 | [references/mask-geometry.md](references/mask-geometry.md) | Spacing/origin/direction mismatch; DICOM→NIfTI flips; mask resample |
 | [references/reproducibility-qc.md](references/reproducibility-qc.md) | ICC / Dice / HD95; feature-stability filter before selection |
 | [references/lesion-selection.md](references/lesion-selection.md) | 2D vs 3D, index lesion, multi-lesion rule, peritumoral ring |
-| [notes/annotation.md](notes/annotation.md) | Broader annotation SOP questions |
-| [notes/reproducibility.md](notes/reproducibility.md) | Repeatability language for Methods |
 
 ## Workflow
 
