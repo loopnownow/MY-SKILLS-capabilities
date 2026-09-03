@@ -3,6 +3,7 @@ name: "lit-cite"
 domain: "03_research"
 trigger: ["引文", "DOI", "BibTeX", "Zotero"]
 outputs: ["bibtex"]
+owner: "03-research/lit-cite/MODULE.md"
 ---
 
 # Citation library

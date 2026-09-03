@@ -5,15 +5,16 @@ Mountable **generic** capability package for [loopnownow/MY-SKILLS](https://gith
 A = orchestrator + personal lab layer. **B = reusable skills only.**
 Nothing in this repo is auto-mounted. Framework A `registry.yaml` records the live mounts.
 
-Layout follows A's coarse ids (CHG-20260903-008). Unlimited depth inside each pack:
+Layout follows A's coarse ids (CHG-20260903-008; audit-fix CHG-20260903-013). Unlimited depth inside each pack. Each id has a thin `SKILL.md` that points at `MODULE.md`.
 
 ```
 02-data-processing/   tables, imaging-io, imaging-qc, pictures, fmri, radiomics-habitat
-03-research/          lit-search, lit-review, lit-cite, design-experiment, design-grant,
+03-research/          lit-search, lit-fulltext, lit-review, lit-cite,
+                      design-experiment, design-protocol, design-grant,
                       frontier-ideate, frontier-hypothesize
-04-analysis/          stats-guide, stats-power, stats-models, figure-engine
-05-manuscript/        write-manuscript, write-venue
-06-review/            review-peer, review-critique
+04-analysis/          stats-guide, stats-power, stats-models, model-eval, fig-flow, fig-plot
+05-manuscript/        write-manuscript, write-reporting, write-venue, write-polish
+06-review/            review-peer, review-critique, review-response
 ```
 
 `04-explainability` and `05-humanize` are **not** in B (MedSci-only in A).

@@ -1,7 +1,7 @@
 # Nature-portfolio figure specification
 
 Use this file instead of (not in addition to conflicting rules in)
-`figure-engine-guidelines.md` when the target is a Nature-portfolio venue (Nature Medicine,
+`radiology-figure-guidelines.md` when the target is a Nature-portfolio venue (Nature Medicine,
 Nature Biomedical Engineering, Nature Communications, npj Digital Medicine, Nature Machine
 Intelligence, etc.). The design-theory principles (honest graphics, color-blind-safe palette,
 one-figure-one-message, anti-redundancy) are venue-independent and still apply — only the
@@ -75,7 +75,7 @@ plan to `radiology-writing`/`nature-family-shape.md` (display-item plan) and to 
 
 ## Imaging panels, statistical charts, de-identification
 
-All content rules in `imaging-panels.md`, `chart-types.md`, and `figure-engine-guidelines.md`
+All content rules in `imaging-panels.md`, `chart-types.md`, and `radiology-figure-guidelines.md`
 (windowing, scale bars, arrows, de-identification, ROC/KM/calibration construction, honest axes,
 uncertainty shown) are **venue-independent** and carry over unchanged. Only panel-letter case,
 column widths, legend word limit, RGB mode, and the Extended Data/Source Data split are
@@ -95,7 +95,7 @@ Nature-specific.
 - [ ] Main vs Extended Data split decided and consistent with the manuscript's display-item plan.
 
 ## Handoffs
-- Figure content rules (chart choice, imaging panels, de-identification) → `figure-engine`
+- Figure content rules (chart choice, imaging panels, de-identification) → `04-fig-plot`
   main workflow (venue-independent).
 - Manuscript display-item plan, abstract/word budget → `../../manuscript-core/references/merged/radiology-writing/nature-family-shape.md`.
 - Source Data / Extended Data availability wording, "condition of publication" language →

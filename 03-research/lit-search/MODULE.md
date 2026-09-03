@@ -1,8 +1,9 @@
 ---
 name: "lit-search"
 domain: "03_research"
-trigger: ["文献检索", "PubMed", "全文"]
+trigger: ["文献检索", "PubMed", "search"]
 outputs: ["search_set"]
+owner: "03-research/lit-search/MODULE.md"
 ---
 
 # Literature search

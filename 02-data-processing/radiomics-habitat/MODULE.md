@@ -1,91 +1,53 @@
 ---
 name: "radiomics-habitat"
-domain: "02_imaging"
-trigger: ["habitat", "pipeline coding"]
+domain: "02_data-processing"
+trigger: ["habitat", "radiomics", "IBSI", "ROI expansion"]
 inputs: ["config", "images", "masks"]
-outputs: ["scripts", "feature_table"]
-tools: ["Python", "CONFIG", "Pictologics", "ANTsPy", "SimpleITK"]
-quality_control: "soft-coded CONFIG; modular stages; no test-set reselection; never re-cluster post"
-owner: "02_imaging/bundles/radiomics-habitat/MODULE.md"
+outputs: ["feature_table", "qc_notes"]
+tools: ["Python", "SimpleITK"]
+quality_control: "train-only selection; never re-cluster post; IBSI discretisation reported"
+owner: "02-data-processing/radiomics-habitat/MODULE.md"
 ---
 
 # trigger is documentation only; not independently discoverable.
 
-# Radiomics & Medical Imaging Pipeline Toolkit
+# Radiomics / habitat **preparation**
 
-A skill for medical imaging / radiomics pipeline work: multi-parametric habitat radiomics, ROI
-expansion and image-ROI file matching, R-to-Python ports of clinical+radiomics ML pipelines, and
-foundation-model-based imaging pipelines (e.g. TimesFM for RECIST). Consolidates the coding
-conventions and domain patterns already established across this user's prior pipeline projects so
-every new script starts from the same baseline instead of being designed from scratch each time.
+Generic guidance for IBSI-compliant feature extraction, habitat clustering, ROI handling, and
+leakage control **before** paper-level modelling.
 
-**Live trees (path pointers only — do not vendor `.py`, NIfTI, or CSV into this skill):**
+**Lab engine, vendor API, and locked pipeline trees live in A personal.** Do not vendor a lab
+code tree, a private API, or Windows lab paths into this pack. Point at A when the user needs
+the in-house extractor.
 
-- `D:\0Grok\0RAD\0scripts\habitat_pipeline` — multiparametric **single timepoint**
-- `D:\0Grok\0RAD\0scripts\delta_habitat_pipeline` — longitudinal **delta**
+Paper-level LASSO / nomogram / ROC / DCA / calibration → `04-stats-models` / `04-model-eval`.
+Mask / reader QC → `02-imaging-qc`.
 
-The two trees are **mutually exclusive**. Feature extraction in both is **Pictologics**
-`RadiomicsPipeline` (`standard_fbn_32` + `standard_fbs_16`). Do **not** describe the engine as
-PyRadiomics. Read `references/habitat-radiomics.md` before writing habitat code.
+## Non-negotiable conventions (generic)
 
-## Non-negotiable coding conventions
+1. **Soft-coded config at the top** — paths, margins (mm), discretisation, K range, seeds.
+2. **Modular stages** — load, preprocess, register, extract, select; each runnable alone.
+3. **Train-only data-dependent steps** — scaler, imputation, feature selection, habitat centroids.
+4. **Never re-cluster post** in longitudinal / delta habitats; propagate baseline masks.
+5. **Do not invent** IBSI compliance, ICC, or software versions the user did not supply.
 
-These apply to every script produced under this skill, regardless of which domain below it belongs to.
-They come directly from repeated, explicit instructions across this user's pipeline work — do not
-deviate from them without being asked to.
+## Domain references
 
-1. **Fully soft-coded configuration, centralized at the top of the file.**
-   No magic numbers or hard-coded paths buried in function bodies. Every tunable parameter (paths,
-   thresholds, window sizes, model hyperparameters, column names, expansion margins in mm, etc.)
-   lives in a single config block/section/dataclass at the very top of the script (or in a dedicated
-   `config.py` / `0_config.py` for multi-file pipelines).
-2. **Modular structure, each module independently runnable.**
-   Split by responsibility (data loading, preprocessing, registration, feature extraction, modeling,
-   reporting/visualization...). Each module should be runnable and testable on its own, not only as
-   part of the full pipeline — mirrors the `config.py / data_loader.py / preprocessing.py /
-   registration.py / habitat.py / radiomics.py / pipeline.py` split used in the habitat radiomics
-   trees and the per-script split (`u_impute.py`, `u_outlier_detection.py`, `curves_roc.py`,
-   `curves_dca.py`, `curves_calibration.py`, `nomogram.py`, `nri_cir.py`, `u_icc.py`, `results_html.py`,
-   `pipeline.py`, ...) used in the R→Python clinical pipeline port (`python -m modules.pipeline`).
-3. **Heavily commented — and comments are written fresh, not preserved from source material.**
-   When porting/rewriting an existing script (e.g. R → Python), do not carry over the original
-   comments. Write new, stronger comments in your own words: what each block does, why a parameter
-   has the value it does, and any caveat a future user of the script needs to know.
-4. **Deliver the final, complete output directly.** Don't hand back a partial draft or a "here's a
-   skeleton, fill in the rest" version when the user has given enough information to complete the
-   script — write the whole thing.
-5. **Flag conversion/refactor caveats proactively.** When porting between languages or refactoring an
-   existing pipeline (e.g. R→Python, delta/two-timepoint→single-timepoint), explicitly call out
-   anything that changes behavior, precision, or statistical assumptions (e.g. R's `survival`/`rms`
-   packages vs Python equivalents, 1-indexing vs 0-indexing, factor handling, RNG differences) — don't
-   let those pass silently.
-
-## Choosing the right domain reference
-
-This skill covers four recurring domains. Read the matching reference file in `references/` before
-writing code — each captures the specific architecture, known pitfalls, and validated conventions for
-that domain:
-
-| Domain | When to use | Reference |
+| Domain | When | Reference |
 |---|---|---|
-| Multi-parametric habitat radiomics | Multi-sequence MRI/CT habitat analysis **or** pre/post delta habitats. Two exclusive CLIs; Pictologics only | `references/habitat-radiomics.md` |
-| Clinical + radiomics ML pipeline | Table1, paper LASSO, ROC/DCA/calibration, nomogram, NRI/circos, ICC, imputation, HTML — R→Python ports via `python -m modules.pipeline` | `references/clinical-ml-pipeline.md` |
-| ROI/image processing scripts | ROI expansion/dilation, image-ROI filename matching (`match_img_ior_updated.py`), batch medical records | `references/roi-processing.md` |
-| Time-series / foundation-model imaging | TimesFM or other foundation-model-based tumor response prediction, RECIST-based longitudinal analysis | `references/timesfm-lung.md` |
-
-If the user's request spans more than one domain (e.g. "extract habitat radiomics features, then feed
-them into the LASSO+nomogram pipeline"), read both relevant references — the config conventions above
-are shared, so the modules can be chained without redesigning either. In-pipeline habitat selection
-is `radiomics.select_features` (**LassoCV** only). Paper-level LASSO / nomogram / `VAL_MODE` live in
-`python -m modules.pipeline`, not `utility/LASSO.py`.
+| Habitat (single timepoint vs delta) | Multi-sequence clustering or pre/post change | [references/habitat-radiomics.md](references/habitat-radiomics.md) |
+| IBSI preprocess | Resample, intensity, discretisation | [references/preprocessing-ibsi.md](references/preprocessing-ibsi.md) |
+| Feature extraction | Feature families, matrix versioning | [references/feature-extraction.md](references/feature-extraction.md) |
+| Leakage audit | Patient-level split; fit-on-training | [references/leakage-audit.md](references/leakage-audit.md) |
+| ROI processing | Dilation in mm, image–ROI matching | [references/roi-processing.md](references/roi-processing.md) |
+| Selection | Train-only filter vs paper modelling | [references/selection-modelling.md](references/selection-modelling.md) |
+| Clinical ML (generic) | Table1 / curves / nomogram **shape** | [references/clinical-ml-pipeline.md](references/clinical-ml-pipeline.md) |
+| Longitudinal foundation models | RECIST time series | [references/timesfm-lung.md](references/timesfm-lung.md) |
 
 ## Typical workflow
 
-1. Identify which domain(s) apply and read the corresponding reference(s). For habitat work, pick
-   **exactly one** of the two live trees — never blend single-timepoint fusion with delta clustering.
-2. Clarify only what's genuinely ambiguous (e.g. imaging modality, expected file naming pattern,
-   Python vs MATLAB vs R target) — don't over-ask if the request already specifies enough to proceed.
-3. Design/adjust the module split and config schema first, consistent with the conventions above.
-4. Write the complete, final code directly — not an outline followed by "I'll fill this in."
-5. If this is a refactor or language port, include a short list of behavioral caveats introduced by
-   the change (see convention 5 above).
+1. Confirm image/mask QC already passed (`02-imaging-qc`).
+2. Choose single-timepoint habitat **or** delta — do not blend clustering schemes.
+3. Lock IBSI preprocess + discretisation *a priori* and report them.
+4. Extract a versioned feature matrix; drop low-ICC features on the **training** reproducibility subset.
+5. Leakage audit before any paper model. Hand modelling to `04-analysis`.

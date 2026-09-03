@@ -1,12 +1,12 @@
 ---
-name: "radiology-design"
+name: "design-experiment"
 domain: "03_research"
-trigger: ["研究设计", "可行性", "imaging feasibility", "样本量", "立项", "开题", "自拟标书"]
+trigger: ["研究设计", "可行性", "imaging feasibility", "样本量"]
 inputs: ["clinical_question", "modality", "cohort_sketch"]
 outputs: ["design_blueprint", "blocking_risks"]
 tools: ["checklist"]
 quality_control: "patient-level split; no slice-level external validation"
-owner: "03_research/bundles/radiology-design/MODULE.md"
+owner: "03-research/design-experiment/MODULE.md"
 ---
 
 # trigger is documentation only; not independently discoverable.
@@ -57,7 +57,6 @@ generalisable or single-center-anecdote.
 | [references/validation-strategy.md](references/validation-strategy.md) | Designing internal/temporal/geographic/external/multi-center/federated validation; center & scanner effects; what counts as "external" |
 | [references/endpoints-and-estimands.md](references/endpoints-and-estimands.md) | Choosing the clinical question, target population, endpoint, comparator, and clinical-use scenario |
 | [references/ai-radiogenomics-12-24-roadmap.md](references/ai-radiogenomics-12-24-roadmap.md) | The user wants a 12-24 month plan for radiology AI/deep radiomics/radiogenomics, or asks how to turn data into a staged publication and translation program |
-| [references/grant-own-skeleton.md](references/grant-own-skeleton.md) | **Voice B 写自己的标书**：立项五步、创新两栏、可行性三块、目标「确定/阐明/探讨」。评别人的国自不要打开本文件 |
 
 ## Workflow
 
@@ -79,8 +78,7 @@ generalisable or single-center-anecdote.
 6. **Design the validation** (validation-strategy.md). Specify the split (patient-level),
    internal scheme, and the external/temporal/geographic/multi-center plan. State what is held
    out and what "external" honestly means here.
-7. **Name the binding constraint** and the sample-size / EPV question (hand the numbers to
-   `radiology-stats`).
+7. **Name the binding constraint** and the sample-size / EPV question (hand the numbers to `04-stats-power`).
 8. **Return** the blueprint + feasibility verdict + validation plan + the prioritised list of
    what to secure next.
 
@@ -91,25 +89,13 @@ generalisable or single-center-anecdote.
 3. **`Study blueprint`** — clinical question, population, primary endpoint/estimand, comparator,
    clinical-use scenario; design type.
 4. **`Method options`** — minimum-viable vs stronger, with the trade-off and which reporting
-   guideline each will be judged against (→ `radiology-reporting`).
+   guideline each will be judged against (→ `05-write-reporting`).
 5. **`Validation plan`** — split scheme, internal + external/temporal/geographic/multi-center
    design, and the honest definition of "external" for this data.
 6. **`Roadmap`** — when relevant: staged 0-3, 3-6, 6-9, 9-12, 12-18, and 18-24 month milestones.
 7. **`Next actions`** — what to collect, label, or confirm before/while running it, in priority
    order. Questions only the author can answer go here.
 
-
-## Own-proposal chapter skeleton (Voice B only)
-
-When the user is **writing their own** 国自 / 开题 / 市科委 / 卫健委 / 院级 / 临床研究方案, open `grant-own-skeleton.md`. Do not use Voice A 评议口癖.
-
-Compact contract (details in that file):
-
-1. **立项五步**：负担+分型 → 主流学说及具体缺口 → 前期（文献+自己，至少两条链）→ 假说一句 → 本研究要做什么。小节标题用机制节点，不是方法名。
-2. **创新两栏**：学术思想创新（往前推一步）+ 技术方法创新（针对立项里点名的技术缺口）。不要写「我们用了 MRI」。
-3. **可行性三块**：模型成熟（点名造模/时间点）+ 平台点名到仪器 + 人（[PI]、SCI [n] 篇、在研基金）。临床另写病源「每年接诊 [疾病] 超过 [n] 例」。
-4. **目标三档**：确定（有无变化/干预是否有效）/ 阐明（机制、谱、通路）/ 探讨（诊断分级、转化）。不要把探讨当唯一目标。
-5. 句库（中英摘要、假说、入排）只从 `grant-writing.md` 取。方法升级写进立项 → `radiology-frontier`.
 
 ## Quality bar
 
@@ -120,16 +106,15 @@ inflating a single-center retrospective dataset into a claim it cannot support.
 
 ## Handoffs
 
-- Frontier framing / is this direction novel & publishable → `radiology-frontier`.
-- Sample size, EPV, power, Riley minimum sample size → `radiology-stats`.
-- Hand-crafted radiomics pipeline design → `radiology-radiomics`.
+- Frontier framing / is this direction novel & publishable → `03-frontier-ideate` / `03-frontier-hypothesize`.
+- Sample size, EPV, power, Riley minimum sample size → `04-stats-power`.
+- Hand-crafted radiomics pipeline design → `02-radiomics-habitat`.
 - Deep-learning architecture & training design → `radiology-deep-learning`.
 - Imaging × omics mechanism design → `radiology-radiogenomics`.
-- ROI/mask annotation SOP → `radiology-annotation`.
-- Which checklist the design must satisfy → `radiology-reporting`.
-- Ethics/consent/data-sharing feasibility → `radiology-ethics`.
+- ROI/mask annotation SOP → `02-imaging-qc`.
+- Which checklist the design must satisfy → `05-write-reporting`.
+- Ethics/consent/data-sharing feasibility → `05-write-manuscript` radiology-ethics (placeholders only).
 - Clinical-use scenario, reader study, prospective plan → `radiology-translation`.
-- Turning this design into **own** funding proposal (Voice B) → `grant-own-skeleton.md` + `../../references/radiology/grant-writing.md`（句库）. Method upgrades into 立项 → `radiology-frontier` `method-upgrade-into-grant.md`.
-- Reviewing **other people's** NSFC/面上 (Voice A) → `../../references/radiology/grant-review.md`. Never mix those tics into own text.
+- Own funding proposal → `03-design-grant` (generic slot) / A personal Voice A/B. Do not copy grant skeletons into this pack.
 - English journal peer review → `06_review`. Not this module.
 - This skill plans research; it does not provide clinical or diagnostic recommendations.

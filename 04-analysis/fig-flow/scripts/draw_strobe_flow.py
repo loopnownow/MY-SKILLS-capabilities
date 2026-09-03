@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Published STROBE Figure 1 — patient selection flowchart.
 
-Gold standard: 2023 BJR POLE Fig.1 (type A). Not the 0RAD auto figure.
+Gold standard: 2023 BJR POLE Fig.1 (type A). Not an auto-generated lab figure.
 
     python draw_strobe_flow.py --json spec.json --out Figure1_flow.png
 

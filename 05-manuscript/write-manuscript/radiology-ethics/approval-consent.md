@@ -20,11 +20,6 @@ Match the consent model to the design; report the approval honestly with author-
 - For multi-center: the approval model and coverage.
 - Adherence to the Declaration of Helsinki (for studies involving human participants).
 
-## Jinshan lab default (retrospective SCI)
-
-Canonical wording: `05_manuscript` → `../../Aitor-format.md`.  
-Retrospective: consent **waived**; IRB of Jinshan Hospital of Fudan University; **leave `No. ` blank** until the user supplies a number. Prospective: do not apply the waiver default.
-
 ## Placeholders (never fabricate)
 
 Use explicit placeholders the author fills, e.g.:

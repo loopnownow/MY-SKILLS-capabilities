@@ -2,6 +2,7 @@
 name: "tables"
 domain: "02_data-processing"
 trigger: ["Excel", "CSV", "临床数据", "缺失值", "异常值"]
+owner: "02-data-processing/tables/MODULE.md"
 ---
 
 # Clinical tables (Excel / CSV)
@@ -10,7 +11,7 @@ This pack is the **02-tables** mount: spreadsheet automation plus missing/outlie
 
 # trigger is documentation only; not independently discoverable.
 
-Do **not** load XSD into skill or model context. Sidecar: `D:\0Grok\0RAD\0scripts\runtime-assets\xlsx-office-schemas\`. To run `scripts/office/validate.py`, copy that folder to `scripts/office/schemas/` first.
+Do **not** load XSD into skill or model context. To run `scripts/office/validate.py`, copy OOXML schema files to `scripts/office/schemas/` first (schemas are not vendored here).
 
 # Requirements for Outputs
 

@@ -20,7 +20,7 @@ rebuilding a structured abstract into an unstructured one is easy but not the re
 | Title | Concrete, modality + finding | Often shorter and more declarative/punchy; still no "novel"/"first" without a live literature check (→ radiology-frontier/radiology-search) |
 | Main-text word limit | Verify current limit | Typically tighter than _Radiology_ and **excludes** Methods (see below) — verify live per venue |
 | Methods placement | Inline, ordered section (see methods.md) | Frequently placed **after References**, online-only, not counted in the main word limit — still needs the same content (design, cohort, technique, model/statistics) and the same reporting-guideline coverage; check the specific venue's current instructions for placement |
-| Display items in main text | Figures/tables within journal limits | A **small number of main display items** (figures/tables); everything else goes to **Extended Data** (peer-reviewed, published) or **Supplementary Information** (not typeset) — verify the current cap live; hand off figure-count planning to `figure-engine`/`nature-figure-spec.md` and `radiology-data` |
+| Display items in main text | Figures/tables within journal limits | A **small number of main display items** (figures/tables); everything else goes to **Extended Data** (peer-reviewed, published) or **Supplementary Information** (not typeset) — verify the current cap live; hand off figure-count planning to `04-fig-plot`/`nature-figure-spec.md` and `radiology-data` |
 | Reference style | Author–year or numbered per _Radiology_ house style | Numbered, in order of first citation (Vancouver-style superscripts) — hand off to `radiology-citation`/`export-formats.md` |
 | Statistics disclosure | Reported in Methods/Results prose | Prose **plus** a separate **Reporting Summary** for life-sciences submissions (→ `radiology-reporting/nature-reporting-summary.md`（该文件尚未创建）) |
 
@@ -86,13 +86,13 @@ to stand alone from the main text.
    limit live if not already confirmed for this venue).
 3. **`Claim–evidence map`** — unchanged from the main workflow.
 4. **`Display-item plan`** — which results go to main figures/tables vs Extended Data/Supplementary
-   Information (→ `../../../../figure-engine/references/nature-figure-spec.md`, `radiology-data`).
+   Information (→ `../../../04-analysis/fig-plot/references/nature-figure-spec.md`, `radiology-data`).
 5. **`Reporting check`** — checklist items **plus** whether a Reporting Summary is required for this
    venue (→ `radiology-reporting/nature-reporting-summary.md`（该文件尚未创建）).
 
 ## Handoffs
-- Figure sizing, panel-letter case, Extended Data figure limits → `figure-engine` /
-  `../../../../figure-engine/references/nature-figure-spec.md`.
+- Figure sizing, panel-letter case, Extended Data figure limits → `04-fig-plot` /
+  `../../../04-analysis/fig-plot/references/nature-figure-spec.md`.
 - Source Data, Extended Data vs Supplementary Information, data/code as a condition of publication
   → `radiology-data`.
 - Reporting Summary / Editorial Policy Checklist → `radiology-reporting` /

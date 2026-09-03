@@ -1,0 +1,10 @@
+---
+name: "pictures"
+domain: "02_data-processing"
+description: TIFF/PNG/JPG and PDF-as-image handling.
+owner: "02-data-processing/pictures/MODULE.md"
+---
+
+# pictures
+
+Capability body: [MODULE.md](MODULE.md). Do not duplicate it here.

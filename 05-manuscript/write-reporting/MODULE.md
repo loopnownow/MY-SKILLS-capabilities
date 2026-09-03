@@ -3,6 +3,7 @@ name: "write-reporting"
 domain: "05_manuscript"
 trigger: ["TRIPOD", "CLAIM", "CLEAR", "报告规范"]
 outputs: ["reporting_checklist"]
+owner: "05-manuscript/write-reporting/MODULE.md"
 ---
 
 # Reporting guidelines in the manuscript
