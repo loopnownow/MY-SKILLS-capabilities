@@ -22,11 +22,11 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 
 | Id | Path |
 |---|---|
-| `02-xlsx` | `02-data-processing/xlsx/` |
-| `02-imaging-qc` | `02-data-processing/imaging-qc/` |
+| `02-tables` | `02-data-processing/tables/` |
+| `02-imaging` | `02-data-processing/imaging/` |
+| `02-pictures` | `02-data-processing/pictures/` |
+| `02-fmri` | `02-data-processing/fmri/` |
 | `02-radiomics-habitat` | `02-data-processing/radiomics-habitat/` |
-| `02-impute` | `02-data-processing/impute/` |
-| `02-generic-docs` | `02-data-processing/generic-docs/` |
 | `03-lit-search` | `03-research/lit-search/` |
 | `03-lit-review` | `03-research/lit-review/` |
 | `03-lit-cite` | `03-research/lit-cite/` |
