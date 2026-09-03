@@ -1,66 +1,40 @@
 # Preprocessing to IBSI standard
 
 Every preprocessing choice changes the features. Fix them a priori, apply uniformly, and report
-to IBSI so the features are reproducible.
-
-Live trees (do not vendor): `habitat_pipeline` and `delta_habitat_pipeline` `PREPROC` /
-`preprocessing.py`.
+to IBSI so the features are reproducible. Lab-locked `PREPROC` blocks live in A personal.
 
 ## Resampling (voxel size)
 
-- **Target spacing:** `PREPROC["target_spacing"] = (1.0, 1.0, 1.0)` mm, both trees.
-- **Image interpolator:** SimpleITK `sitkBSpline` (**B-Spline order 5**).
-- **Mask interpolator:** `sitkNearestNeighbor`.
-- **Default pixel fill:** `SetDefaultPixelValue(0)`.
+- **Target spacing:** typically isotropic 1×1×1 mm unless the user locked another grid.
+- **Image interpolator:** B-spline (order 3–5). **Mask interpolator:** nearest-neighbour.
+- **Default pad:** 0 (not a pixel-type enum accidentally used as a fill value).
 
-**Delta-tree bug to not reintroduce:** `resample_image` must fill **0**, not
-`image.GetPixelIDValue()` (that passes the pixel-type enum, e.g. Float32=8, as the pad value).
-The delta tree documents this as BUG-2.
+## Intensity normalisation
 
-## Intensity normalisation / handling
-
-| Modality | Live handling |
+| Modality | Typical handling (state what you actually did) |
 |---|---|
-| **CT** | **No N4** (`apply_n4` False). `normalization` = **minmax** after `ct_window` clip (live window `(-1000, 400)` HU unless overridden). |
-| **MRI** | **N4 + zscore** (`apply_n4` True; `normalization` = `zscore`). |
-| **ADC** | Habitat tree `PREPROC["SEQUENCE_OVERRIDES"]`: `{"ADC": {"normalization": "none"}}` — ADC is already quantitative; do not z-score it. Delta tree has no per-sequence override dict (single-image pre/post). |
-| **PET** | Not configured in these trees; if added, use SUV and state the normalisation. |
+| CT | Often no N4; clip to a pre-specified HU window then scale |
+| MRI | N4 + z-score (or a named alternative) |
+| ADC | Already quantitative — do not silently z-score |
+| PET | SUV; state the normalisation |
 
-Habitat tree: `resolve_preproc_settings(sequence_name, modality)` applies modality defaults then
-`SEQUENCE_OVERRIDES`. Delta tree: `preprocess(...)` uses flat `PREPROC` (live defaults are CT-like:
-N4 off, minmax). Do not silently copy habitat MRI/ADC overrides onto delta without a config change.
+Normalisation is fit **per-image / per-mask**, never from test-cohort statistics.
 
-State whether normalisation is fit per-image (these trees: per-image / per-mask) — never use test
-cohort statistics for intensity scaling.
+## Gray-level discretisation
 
-## Gray-level discretisation (IBSI; complementary, not "pick one")
+Report FBN and/or FBS settings (`feature-extraction.md`). Complementary configs are fine;
+collapsing to one undocumented binning is not.
 
-These trees run **both** Pictologics standard configs (`feature-extraction.md`):
+## Mandatory IBSI reporting
 
-- **FBN32** — `standard_fbn_32` (fixed bin **number**, 32).
-- **FBS16** — `standard_fbs_16` (fixed bin **size**, width = range / 16).
-
-They are **complementary** (IBSI: different families are sensitive to different discretisations).
-Do not collapse this to "choose one of binWidth or binCount." Report both config names.
-
-## Filters / image transforms
-
-Voxel-clustering channels (habitat tree `VOXEL_FEATURES`: local texture, gradient, optional LoG /
-wavelet) are **inputs to K-means**, not a substitute for Pictologics standard configs. Declare
-each switch and account for multiplicity downstream (→ radiology-stats).
-
-## Mandatory IBSI reporting (cross-ref radiology-reporting/ibsi-features.md)
-
-- Image interpolation + resampled spacing `(1,1,1)`; B-Spline 5 / mask NN; fill 0.
-- Intensity normalisation / re-segmentation range (`ct_window`) / ADC `normalization=none`.
-- Discretisation: FBN32 **and** FBS16.
-- Filters + parameters (voxel-feature switches vs Pictologics configs — keep them distinct).
-- Feature aggregation (3D, habitat masks).
-- Software + version + IBSI compliance statement (**Pictologics**, not PyRadiomics).
+- Interpolation + resampled spacing; image vs mask interpolators; pad value
+- Intensity normalisation / re-segmentation range
+- Discretisation (FBN and/or FBS)
+- Filters + parameters
+- Feature aggregation (3D, ROI/habitat masks)
+- Software + version + an honest IBSI statement (compliant / not tested)
 
 ## Reporting sentence
 
-*"Images were resampled to 1×1×1 mm (B-spline order 5; masks nearest-neighbour; default fill 0,
-not pixel-id). CT: no N4, minmax after ct_window. MRI: N4 + z-score. ADC in the habitat tree uses
-SEQUENCE_OVERRIDES normalization=none. Features used Pictologics standard_fbn_32 and
-standard_fbs_16 as complementary IBSI discretisations."*
+*"Images were resampled to [spacing] (B-spline; masks nearest-neighbour). [Modality-specific
+normalisation]. Features used [discretisation]. Software [name vX]."*

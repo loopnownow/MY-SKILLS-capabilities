@@ -67,7 +67,7 @@ strengthen Methods, FUTURE-AI to frame deployability, and pre-empt reviewer crit
 - Complete the **Reporting Summary** (published with the article) and, if requested, the
   **Editorial Policy Checklist** (→ `nature-reporting-summary.md`).
 - Plan the **Extended Data / Supplementary Information / Source Data** split
-  (→ mounted `04-figure-engine` (`nature-figure-spec.md`), `radiology-data`).
+  (→ `04-fig-plot` (`nature-figure-spec.md`)).
 - See `radiology-journal/submission-logistics.md`（该模块尚未建立，暂无内容） for the venue-specific pre-flight checklist.
 
 ## Edge cases

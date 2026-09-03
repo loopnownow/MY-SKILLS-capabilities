@@ -1,150 +1,80 @@
 ---
-name: "figure-engine"
-domain: "05_manuscript"
-trigger: ["作图", "ROC图", "校准", "DCA图"]
-inputs: ["results_html", "png_from_pipeline"]
+name: "fig-plot"
+domain: "04_analysis"
+trigger: ["作图", "ROC图", "校准", "DCA图", "Kaplan-Meier"]
+inputs: ["results_tables", "png_from_pipeline"]
 outputs: ["publication_figure", "legend"]
-tools: ["palette", "figure-engine"]
-quality_control: "CI and n match HTML; colorblind-safe; FIG_PALETTE from settings.ini"
-owner: "05_manuscript/bundles/figure-engine/MODULE.md"
+tools: ["matplotlib", "palette"]
+quality_control: "CI and n match supplied results; colorblind-safe"
+owner: "04-analysis/fig-plot/MODULE.md"
 ---
 
 # trigger is documentation only; not independently discoverable.
 
-# Radiology Publication Figures
+# Statistical and imaging-panel figures
 
-Use this skill to build figures that pass _Radiology_'s technical and editorial bar: correct
-file format and resolution, legible typography, color-blind-safe palettes, honest axes, and
-the specific chart types imaging-AI reviewers expect (ROC, calibration, decision-curve,
-forest/SROC, Kaplan-Meier, Bland-Altman), plus **de-identified** annotated imaging panels.
+Build plots that pass a technical bar: vector-first export, legible type, color-blind-safe
+palettes, honest axes, and the chart types imaging-AI reviewers expect (ROC, calibration,
+decision-curve, forest/SROC, Kaplan-Meier, Bland-Altman), plus **de-identified** annotated
+imaging panels.
+
+**STROBE / patient-selection Figure 1 belongs in `04-fig-flow`**, not here.
 
 ## Core stance
 
-- **Vector first.** Primary output is editable **`.svg`** (or `.pdf`); secondary is a
-  **≥ 300 dpi** raster (TIFF/PNG). Keep text as text (`svg.fonttype='none'`), not outlines,
-  so editors can re-typeset.
-- **One figure, one message.** Each panel answers one question; no two panels duplicate it.
-  Panels are labelled A, B, C (_Radiology_-family) or a, b, c (Nature-family — the case is
-  venue-dependent, never mixed within one manuscript; see "When to open extra files").
-- **Honest graphics.** Axes start where the data demand (don't truncate to exaggerate);
-  show uncertainty (CI bands, error bars); state n.
-- **De-identify every image.** No PHI burned into pixels, no faces/identifiers; scrub DICOM
-  overlays; report windowing (WL/WW) and add a scale bar where size matters.
-- **Match the journal.** Sans-serif (Arial/Helvetica), figure width to column — _Radiology_-family
-  single ~85 mm / double ~170 mm, **or** Nature-family single 89 mm / double 183 mm (max height
-  170 mm) — adequate font size at final print size (≈ 7–9 pt min). Confirm the target venue
-  before sizing the first figure.
-- **Never fabricate data.** Plot only supplied/loaded values; mark simulated/example data
-  clearly.
+- **Vector first.** Primary `.svg` (or `.pdf`); secondary ≥ 300 dpi raster. Keep text as text.
+- **One figure, one message.** Panels labelled A, B, C or a, b, c — venue-dependent, never mixed.
+- **Honest graphics.** Don't truncate axes to exaggerate; show uncertainty; state n.
+- **De-identify every image.** No PHI; report windowing; scale bar where size matters.
+- **Never fabricate data.** Plot only supplied/loaded values; mark example data.
 
 ## When to use
 
-- Statistical figures: ROC (+ DeLong annotation), calibration, decision-curve, forest, SROC,
-  Kaplan-Meier (with numbers-at-risk), Bland-Altman, box/violin, heatmaps/clustermaps.
-- Radiogenomics: MOFA/factor plots, deconvolution stacked bars, habitat maps, correlation
-  heatmaps.
-- Imaging panels: multi-row montages, before/after, arrows/insets, windowing labels, scale
-  bars.
-- Patient-selection Figure 1: published STROBE (type A, default). CONSORT is not the default
-  (this lab's papers are observational). PRISMA only for actual systematic reviews.
+- Statistical figures: ROC, calibration, DCA, forest, SROC, KM, Bland-Altman, box/violin, heatmaps.
+- Imaging panels: montages, arrows/insets, windowing labels.
+- **Not** enrolment flowcharts — those are `04-fig-flow`.
 
 ## When to open extra files
 
 | File | Open when |
 |---|---|
-| [references/radiology-figure-guidelines.md](references/radiology-figure-guidelines.md) | File format, resolution, size, fonts, color, panel labelling, de-identification rules |
-| [references/chart-types.md](references/chart-types.md) | Choosing/parameterising the right statistical chart (ROC, calibration, DCA, forest, KM, Bland-Altman, heatmap) |
-| [references/imaging-panels.md](references/imaging-panels.md) | Building montages: windowing, arrows, insets, scale bars, anonymisation, panel layout |
-| [references/api.md](references/api.md) | The matplotlib rcParams preamble, color palette, and reusable helper functions (ROC/calibration/forest/KM) |
-| [references/design-theory.md](references/design-theory.md) | Typography, layout grid, color-blind-safe palettes, anti-redundancy, accessibility |
-| [references/color-systems.md](references/color-systems.md) | Picking ONE palette (Okabe-Ito / NPG / Morandi) and mapping color→meaning so every figure matches |
-| [../../references/lab-palettes.md](../../references/lab-palettes.md) | 0RAD console five-set (`npg`/`okabe`/`tol`/`radiology`/`ibm`); Combined→Age roles |
-| [references/survival-figures.md](references/survival-figures.md) | Kaplan-Meier integrity (curve ↔ numbers-at-risk ↔ censoring), numbers-at-risk done right, time-dependent (IPCW) ROC/calibration/DCA, incremental-value framing |
-| [references/figure-set-consistency.md](references/figure-set-consistency.md) | Unifying palette/fonts/axes across all figures, and cross-validating every figure number against the manuscript tables and data before export |
-| [references/nature-figure-spec.md](references/nature-figure-spec.md) | Target is a Nature-portfolio venue instead of _Radiology_ — column widths (89/183 mm), lowercase panel letters, RGB, legend word cap, Extended Data/Source Data display-item split |
-| [references/figure-intent-and-render-qa.md](references/figure-intent-and-render-qa.md) | Full figure set planning, crowded/colliding labels, DCA/KM/heatmap layout problems, final-size render review, source-data crosswalk, or premium academic visual polish |
-| [references/journal-family-visual-style.md](references/journal-family-visual-style.md) | Target journal family is known, the user supplied author-guide PDFs/classic articles, or the figure set needs Nature/npj or European Radiology visual taste |
-| [references/patient-flow.md](references/patient-flow.md) | Type A published STROBE Figure 1 (default): 2023 BJR POLE layout, n-audit, Tao Yongqiong clinical variant, 0RAD auto as anti-pattern |
-| [references/study-workflow.md](references/study-workflow.md) | Type B study-workflow rules only (GGN-style enrolment + analysis steps). No drawing code. Do not force into draw_strobe_flow |
-| [references/methods-pipeline.md](references/methods-pipeline.md) | Type C methods pipeline / radiomics-step cartoon. Must **not** call draw_strobe_flow |
-| [references/style.md](references/style.md) | Type A box geometry (white, black squares, Arial, arrows IN/OUT) |
-| [scripts/draw_strobe_flow.py](scripts/draw_strobe_flow.py) | Draw type A only (`--json` `--out`; `--no-audit` solely for documented historical n mismatches) |
+| [references/radiology-figure-guidelines.md](references/radiology-figure-guidelines.md) | Format, resolution, size, fonts, colour, de-identification |
+| [references/chart-types.md](references/chart-types.md) | Choosing ROC / calibration / DCA / forest / KM / Bland-Altman |
+| [references/imaging-panels.md](references/imaging-panels.md) | Montages, windowing, arrows, scale bars |
+| [references/api.md](references/api.md) | matplotlib preamble, palette helpers |
+| [references/design-theory.md](references/design-theory.md) | Typography, grid, colour-blind palettes |
+| [references/color-systems.md](references/color-systems.md) | One palette (Okabe-Ito / NPG / Morandi) mapped to meaning |
+| [references/survival-figures.md](references/survival-figures.md) | KM integrity, numbers-at-risk, time-dependent ROC |
+| [references/figure-set-consistency.md](references/figure-set-consistency.md) | Unify palette/fonts across the set |
+| [references/nature-figure-spec.md](references/nature-figure-spec.md) | Nature-portfolio column widths, lowercase panels |
+| [references/figure-intent-and-render-qa.md](references/figure-intent-and-render-qa.md) | Full-set planning and render QA |
+| [references/journal-family-visual-style.md](references/journal-family-visual-style.md) | Family visual taste |
+| [references/plot_types.md](references/plot_types.md) | Generic plot catalogue |
+| [references/common_issues.md](references/common_issues.md) | Frequent render bugs |
 
-## Figure 1 types (do not mix)
-
-| Type | When | Draw with |
-|---|---|---|
-| **A — published STROBE** (default) | Retrospective cohort / radiomics prediction patient selection | `scripts/draw_strobe_flow.py`. Gold standard: 2023 BJR POLE Fig.1. Inclusion arrow IN, exclusion arrow OUT with `(n=k)`, Training Cohort / Validation Cohort, no pipeline row. See `references/patient-flow.md`. |
-| **B — study workflow** | Chinese-journal "研究流程图" that mixes enrolment with Radscore/nomogram steps | Rules only: `references/study-workflow.md`. Do not extend `draw_strobe_flow`. |
-| **C — methods pipeline** | Radiomics steps, animal/mechanism panels, specimen-to-model cartoons | **Must not** call `draw_strobe_flow`. See `references/methods-pipeline.md`. |
-
-CONSORT randomisation arms are **not** the default. Draw CONSORT only for an actual RCT.
-
-Do not invent n. `draw_strobe_flow` exits nonzero if `screened − Σ exclusion n ≠ analyzed` or `Σ split n ≠ analyzed`. Historical printed figures that fail arithmetic may use `--no-audit` only when that mismatch is documented.
-
-Caption: `Figure 1. Flowchart of patient selection and study design.`
+Patient-flow / STROBE / study-workflow / methods-pipeline cartoons → `../fig-flow/`.
 
 ## Workflow
 
-0. **Confirm the target venue** (_Radiology_-family default, or Nature-family →
-   nature-figure-spec.md) before sizing the first figure — column widths and panel-letter case
-   differ and are painful to change after the set is built.
-0. **For venue-specific visual taste**, open `journal-family-visual-style.md` and apply the
-   target family's panel lettering, legend density, graphical abstract, table, and source-data
-   conventions.
-1. **For full figure sets or layout-sensitive figures**, open
-   `figure-intent-and-render-qa.md` and create the figure intent table plus source-data
-   crosswalk before drawing.
-2. **Pick the chart for the message** (chart-types.md). Discrimination → ROC; reliability →
-   calibration; clinical value → decision-curve; agreement → Bland-Altman; time-to-event →
-   Kaplan-Meier; meta-analysis → forest/SROC; whole-study summary → graphical abstract.
-   Patient selection → type A STROBE (`draw_strobe_flow`, `patient-flow.md`). Study-workflow
-   → type B rules only. Methods pipeline → type C, never `draw_strobe_flow`.
-3. **Start the script with the rcParams preamble and palette** from api.md.
-4. **Build the panel(s)** with helper functions; add CI bands, n, and clear axis labels with
-   units; label panels via `panel_letter()`/`add_panel_letter()` (api.md) with the case set for
-   the confirmed venue — never hardcode `chr(65+i)` per script.
-5. **For imaging panels**, confirm de-identification, add windowing labels + scale bar +
-   arrows; keep grayscale unless color encodes data.
-6. **Export** `.svg` (text-as-text) **and** a 300–600 dpi raster; check legibility at final
-   print width.
-7. **QA** (see contract) and inspect the final render for overlap/clipping before returning.
+0. Confirm the target venue before sizing (column widths and panel-letter case differ).
+1. For full sets, open `figure-intent-and-render-qa.md` and build the intent table.
+2. Pick the chart for the message (`chart-types.md`). Patient selection → `04-fig-flow`.
+3. Start the script with the rcParams preamble (`api.md`).
+4. Build panels; add CI, n, units; label via helpers — never hardcode `chr(65+i)` per script.
+5. Imaging panels: de-identify, windowing, scale bar.
+6. Export `.svg` (text-as-text) **and** a 300–600 dpi raster.
+7. QA at final print width.
 
 ## Output contract
 
-1. **`Figure plan`** — what each panel shows and why; the chart type chosen.
-2. **`Figure intent / source-data crosswalk`** — for full figure sets or submission figures,
-   show what claim each panel supports and where the data came from.
-3. **`Script`** — a single runnable `.py` starting with the rcParams preamble; data inputs
-   clearly marked (real vs example).
-4. **`Files`** — `figure.svg` (primary) + `figure.png`/`.tiff` at ≥ 300 dpi.
-5. **`QA notes`** — fonts embedded as text, color-blind check, axis honesty, n shown,
-   de-identification confirmed for any image panel, final-size render checked for no
-   overlap/clipping, and venue-family visual style checked when applicable.
-
-## QA checklist (run before returning)
-
-- rcParams preamble present; output is `.svg` with `svg.fonttype='none'` **and** a ≥ 300 dpi
-  raster.
-- Every axis labelled with units; legend present; panels labelled A/B/C or a/b/c per the
-  confirmed venue, consistently across the whole figure set.
-- Uncertainty shown (CI band/error bars) and n stated.
-- Color-blind-safe; not reliant on red/green alone; sufficient contrast.
-- Imaging panels de-identified; windowing + scale bar present where relevant.
-- No invented data points; example data flagged.
-- Final exported render inspected at target size; no label/tick/legend/number overlap,
-  clipping, or text crossing plot elements.
-- Venue-family rules satisfied when applicable (panel-letter case, background, legend length,
-  graphical abstract blocks, Source Data/table expectations).
-- Type A Figure 1: inclusion IN, exclusion OUT with per-reason n, Training/Validation (never Development), no pipeline row, n-audit passed.
+1. Figure plan — what each panel shows.
+2. Script — runnable `.py` with real vs example data marked.
+3. Files — `figure.svg` + ≥ 300 dpi raster.
+4. QA notes — fonts as text, colour-blind check, n shown, de-identification.
 
 ## Handoffs
-- The statistic behind the plot (AUC CI, DeLong, ICC, calibration metrics, net benefit) →
-  `radiology-stats`.
-- Whether the figure satisfies a checklist item (flow diagram for STROBE; STARD/CONSORT
-  only when the study actually is DTA or an RCT), or the Reporting Summary/Nature Portfolio
-  checklist → `radiology-reporting`.
-- Figure legends/captions prose, display-item plan (main vs Extended Data) →
-  `radiology-writing`.
-- Source Data files, Extended Data vs Supplementary Information wording → `radiology-data`.
-- Full figure set finished and ready for a harsh read before submission → `06_review`.
+
+- Statistic behind the plot → `04-stats-guide` / `04-model-eval`
+- Checklist item (STROBE flow) → `04-fig-flow` and `05-write-reporting`
+- Captions / display-item plan → `05-write-manuscript` / `05-write-venue`
+- Harsh read before submission → `06-review-critique`

@@ -43,7 +43,7 @@ def save(fig, stem):
 
 def panel_letter(i, case="upper"):
     """Single source of truth for panel labels — don't hardcode chr(65+i) per script.
-    case="upper" -> A, B, C  (_Radiology_-family default, figure-engine-guidelines.md)
+    case="upper" -> A, B, C  (_Radiology_-family default, radiology-figure-guidelines.md)
     case="lower" -> a, b, c  (Nature-family default, nature-figure-spec.md)
     Always bold, top-left of the panel, in every figure of the same manuscript — pick ONE case
     for the whole figure set and pass it explicitly; never let it default silently per script.

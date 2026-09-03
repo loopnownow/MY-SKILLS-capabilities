@@ -7,7 +7,7 @@
   left-to-right, top-to-bottom.
 - Composite figures: a schematic/flow panel (A) can orient the reader before data panels.
 - Panel-letter case is venue-dependent, not a style choice: uppercase A/B/C is the
-  _Radiology_-family default (`figure-engine-guidelines.md`); lowercase a/b/c is the
+  _Radiology_-family default (`radiology-figure-guidelines.md`); lowercase a/b/c is the
   Nature-family default (`nature-figure-spec.md`). Set it once via `api.md`'s `panel_letter()`
   and keep the same case in every figure of the manuscript.
 

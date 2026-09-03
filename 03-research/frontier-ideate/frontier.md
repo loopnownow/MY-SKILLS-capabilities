@@ -20,7 +20,7 @@ articles as discovery sources. State the search date.
 For 2023-2026 high-impact imaging AI patterns, load these files before giving
 literature-driven project suggestions:
 
-- `literature-evidence-2023-2026.md`
+- `../lit-review/literature-evidence-2023-2026.md`
 - `frontier-patterns-2023-2026.md`
 
 State that this is a PubMed-verified curated seed map, not an exhaustive systematic

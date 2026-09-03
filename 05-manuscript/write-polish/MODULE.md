@@ -3,6 +3,7 @@ name: "write-polish"
 domain: "05_manuscript"
 trigger: ["润色", "polish", "学术英语"]
 outputs: ["polished_prose"]
+owner: "05-manuscript/write-polish/MODULE.md"
 ---
 
 # Generic language polish

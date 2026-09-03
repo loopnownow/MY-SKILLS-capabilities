@@ -5,7 +5,7 @@ abstracts, workflow diagrams, performance plots, radiomics pipeline figures, dee
 learning architecture figures, mechanism diagrams, or figure legends for imaging AI
 studies.
 
-If the user names a target journal family, load `../../bundles/figure-engine/MODULE.md`.
+If the user names a target journal family, load [MODULE.md](../MODULE.md) and `nature-figure-spec.md`.
 Radiology-family and Nature/npj-family figures differ in panel-letter case, column
 widths, display-item limits, Source Data expectations, and legend conventions.
 
@@ -30,7 +30,7 @@ widths, display-item limits, Source Data expectations, and legend conventions.
 
 | Figure/Table | Purpose | Contents |
 |---|---|---|
-| Figure 1 | study design | Draw with `bundles/figure-engine`: screened → exclusion → analyzed *n* → development/validation → analysis row. No inclusion box. Splits must connect down. Use only written *n*. |
+| Figure 1 | study design | Patient-selection Figure 1 is `04-fig-flow` (STROBE type A). Do not draw enrolment flow here. |
 | Table 1 | cohort description | demographics, clinical variables, endpoints by split |
 | Figure 2 | model pipeline | segmentation, feature extraction/modeling, validation |
 | Table 2 | model performance | AUC/C-index, CI, sensitivity, specificity, calibration |

@@ -1,7 +1,7 @@
 # Type A — published STROBE patient-selection flowchart
 
 Default Figure 1 for retrospective cohort / radiomics prediction papers.
-Gold standard: **2023 BJR POLE Fig.1**, not the 0RAD auto figures.
+Gold standard: **2023 BJR POLE Fig.1**, not auto-generated lab figures.
 
 Draw with `scripts/draw_strobe_flow.py`. Do not mix type B or C into this script.
 
@@ -53,11 +53,11 @@ Treatment / follow-up papers (not radiomics prediction) may use this variant. St
 
 Do not fold this variant into the default radiomics spec. Encode it only when the manuscript is that clinical design.
 
-## Anti-pattern — 0RAD auto figures
+## Anti-pattern — auto-generated lab figures
 
 Do not copy the laboratory auto-drawer:
 
-| 0RAD auto | Published POLE |
+| Auto-generated lab drawer | Published POLE |
 |---|---|
 | `spec.pop("inclusion")` — no inclusion box | Right inclusion, arrow IN |
 | Exclusion often without per-reason n | Each reason `(n=k)` |

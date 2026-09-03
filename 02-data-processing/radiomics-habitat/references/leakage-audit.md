@@ -1,72 +1,51 @@
 # Radiomics leakage audit
 
-The checklist reviewers (and METRICS/RQS) use. Each item is pass/fail with a fix. One failure can
-sink the paper.
+The checklist reviewers (and METRICS/RQS) use. Each item is pass/fail with a fix.
 
-## Habitat / delta trees — fit-on-training-only (live behaviour)
+## Fit-on-training-only (required behaviour)
 
-Both `habitat_pipeline` and `delta_habitat_pipeline` `run_cohort_aggregation`:
+- Split **patient-level** rows first.
+- Scaler **fit on train only**, transform test.
+- Feature selection **train only**. Test columns are sliced with the selected names afterwards.
+- Delta absolute/relative change is computed **without** Z-score; scaling happens later on train.
 
-- `train_test_split` first (patient-level rows after flatten).
-- `StandardScaler` **`fit` on train only**, `transform` test.
-- `select_features(X_train, y_train, …)` **train only** (near-zero variance → Pearson redundancy
-  → **LassoCV**). Test columns are sliced with the selected names afterwards.
-
-`delta_habitat_pipeline.radiomics.compute_delta_features` computes absolute / relative / rate
-deltas **without Z-score**. Scaling happens later in `run_cohort_aggregation` on the train split
-only. Do not z-score inside `compute_delta_features`.
-
-## Gap: `feature_scaler.joblib`
-
-Training `pipeline.py` **may not write** `06_selected/feature_scaler.joblib` (scaler is fitted in
-memory and discarded). `delta_habitat_pipeline/utility/validate_delta_habitat.py`
-(`load_train_artifacts`) **expects** that file. Flag this when wiring validation: persist the
-scaler explicitly if a frozen apply-on-new-cohort path is required. Do not refit the scaler on
+Persist the fitted scaler if a frozen apply-on-new-cohort path is required. Do not refit on
 validation/test.
 
-## ICC is not in these trees
-
-Neither habitat tree implements ICC filtering. Point to **`modules/utils/u_icc.py`** in the
-clinical / `python -m modules.pipeline` stack. Do not invent an in-tree ICC step or imply
-`select_features` already dropped low-ICC features.
+ICC filtering is **not** implied by LASSO. Run a dedicated ICC step on the training
+reproducibility subset (`02-imaging-qc`) before selection.
 
 ## Partition hygiene
 
-- [ ] Split made at the **patient level** (not slice/lesion). Habitat flatten is already one row
-      per patient — do not split on habitat rows.
+- [ ] Split at the **patient** level (not slice/lesion/habitat row).
 - [ ] No patient's lesions/slices/sequences/phases/timepoints span train and test.
-- [ ] Test set untouched until final evaluation (no peeking).
+- [ ] Test set untouched until final evaluation.
 
 ## Fit-on-training-only
 
-- [ ] **Feature selection** (`select_features`) inside CV/training folds, not on the full cohort.
-- [ ] **Normalisation / standardisation** (`StandardScaler`) fit on training, applied to test.
-- [ ] **Missing-value imputation** fit on training.
-- [ ] **Harmonisation (ComBat)** fit on training (biology preserved), applied to test.
-- [ ] **Augmentation** never crosses the split.
-- [ ] **Delta Z-score** not computed in `compute_delta_features`.
+- [ ] Feature selection inside CV/training folds, not on the full cohort.
+- [ ] Normalisation / standardisation fit on training, applied to test.
+- [ ] Missing-value imputation fit on training.
+- [ ] Harmonisation (ComBat) fit on training, applied to test.
+- [ ] Augmentation never crosses the split.
 
 ## Tuning hygiene
 
-- [ ] Hyperparameters tuned by **nested CV** / a separate validation set, not on test.
-      In-pipeline LassoCV uses 5-fold CV on **train** (`select_features`).
-- [ ] **Threshold / operating point** chosen on training/derivation, not on test.
+- [ ] Hyperparameters tuned by nested CV or a separate validation set, not on test.
+- [ ] Operating point chosen on training/derivation, not on test.
 - [ ] No early stopping / model selection on the test set.
 
 ## Reproducibility / stability
 
-- [ ] Non-reproducible (low-ICC) features removed before modelling — **via `u_icc.py`**, not
-      these trees.
-- [ ] Discretisation (FBN32 + FBS16) fixed and reported (IBSI).
-- [ ] Software + version + Pictologics config names recorded and shareable.
-- [ ] Frozen validation has `feature_scaler.joblib` (or the gap is acknowledged).
+- [ ] Low-ICC features removed before modelling, training subset only.
+- [ ] Discretisation fixed and reported (IBSI).
+- [ ] Software + version recorded.
 
 ## Evaluation honesty
 
-- [ ] Real prevalence reported (no silent 1:1 resampling claimed as the clinical setting).
-- [ ] Discrimination **and** calibration **and** decision-curve for clinical models.
+- [ ] Real prevalence reported.
+- [ ] Discrimination **and** calibration **and** decision-curve when clinical utility is claimed.
 - [ ] CIs everywhere; external/temporal validation stated honestly.
-- [ ] Selection stability / per-center results where relevant.
 
 ## Output
 
@@ -80,6 +59,5 @@ Leakage audit:
 Overall: [Blocker(s) / Should-fix / Clean]
 ```
 
-Hand paper-level statistical modelling to `python -m modules.pipeline` / `radiology-stats`, and
-the reporting-guideline mapping to `radiology-reporting`. Do not send that work to
-`utility/LASSO.py`.
+Paper-level modelling → `04-stats-models` / `04-model-eval` / A personal stats policy.
+Reporting-guideline mapping → `05-write-reporting`.
