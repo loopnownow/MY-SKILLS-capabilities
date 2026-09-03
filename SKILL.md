@@ -27,12 +27,22 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 | `02-radiomics-habitat` | `02-data-processing/radiomics-habitat/` |
 | `02-impute` | `02-data-processing/impute/` |
 | `02-generic-docs` | `02-data-processing/generic-docs/` |
-| `03-literature` | `03-research/literature/` |
-| `03-design` | `03-research/design/` |
-| `03-frontier` | `03-research/frontier/` |
-| `04-stats-generic` | `04-analysis/stats-generic/` |
+| `03-lit-search` | `03-research/lit-search/` |
+| `03-lit-review` | `03-research/lit-review/` |
+| `03-lit-cite` | `03-research/lit-cite/` |
+| `03-design-experiment` | `03-research/design-experiment/` |
+| `03-design-grant` | `03-research/design-grant/` |
+| `03-frontier-ideate` | `03-research/frontier-ideate/` |
+| `03-frontier-hypothesize` | `03-research/frontier-hypothesize/` |
+| `04-stats-guide` | `04-analysis/stats-guide/` |
+| `04-stats-power` | `04-analysis/stats-power/` |
+| `04-stats-models` | `04-analysis/stats-models/` |
 | `04-figure-engine` | `04-analysis/figure-engine/` |
-| `05-writing-generic` | `05-manuscript/writing-generic/` |
-| `06-review-generic` | `06-review/review-generic/` |
+| `05-write-manuscript` | `05-manuscript/write-manuscript/` |
+| `05-write-venue` | `05-manuscript/write-venue/` |
+| `06-review-peer` | `06-review/review-peer/` |
+| `06-review-critique` | `06-review/review-critique/` |
+
+`04-explainability` and `05-humanize` are not in this package.
 
 No external Skill is mounted here. Academic Research Skills / MedSci Skills are future candidates for **A**, not contents of this package.
