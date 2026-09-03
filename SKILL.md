@@ -51,6 +51,8 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 | `06-review-critique` | `06-review/review-critique/` |
 | `06-review-response` | `06-review/review-response/` |
 
+`02-tables` is clinical Excel/CSV (headers, missingness, ID, cohort). Nested `xlsx-office/` is the Anthropic office/xlsx skill; nested `impute/` is fill/outlier implementation.
+
 `04-explainability` and `05-humanize` are not in this package.
 
 No external Skill is mounted here. Academic Research Skills / MedSci Skills are future candidates for **A**, not contents of this package.

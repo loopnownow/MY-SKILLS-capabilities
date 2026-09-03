@@ -32,7 +32,7 @@ Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDA
 
 | Id | Path | Use |
 |---|---|---|
-| `02-tables` | `02-data-processing/tables/` | Clinical Excel/CSV + impute |
+| `02-tables` | `02-data-processing/tables/` | Clinical Excel/CSV: headers, missingness, ID, cohort columns (nested `impute/`, `xlsx-office/`) |
 | `02-imaging-io` | `02-data-processing/imaging-io/` | CT/MRI DICOM · NIfTI I/O |
 | `02-imaging-qc` | `02-data-processing/imaging-qc/` | CT/MRI ROI / reader QC |
 | `02-pictures` | `02-data-processing/pictures/` | TIFF / PNG / JPG / PDF-as-image |

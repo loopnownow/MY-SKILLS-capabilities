@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-03 — clinical tables front (paired A change CHG-20260903-015)
+
+Author: Aitor. Branch: `fix/audit-p1-20260903` (extends PR #6). Does not merge to main.
+
+- `02-tables` **front** (`MODULE.md` + `SKILL.md`) is clinical Excel/CSV: headers, missingness, ID integrity, cohort columns (`training`/`test`; validation = external only; never Development set). Modelling → 04. HIS login never here.
+- Anthropic office/xlsx skill (financial models, 10-K sources, blue-input color conventions, `scripts/office`, `recalc.py`) moved to nested `02-data-processing/tables/xlsx-office/` with its own MODULE.md + thin SKILL.md. `LICENSE.txt` stays with that nested pack.
+- Nested `impute/` kept. Env-only soft-coding from CHG-20260903-014 not undone. Links only: parent clinical QC; `xlsx-office/` for XML packing.
+- Imaging data-availability `data.md` moved to `02-data-processing/imaging-io/data.md`; imaging-io MODULE points at it. Dealbreaker availability pointer follows. Dropped misplaced reporting `tables/checklists.md` (CLAIM/TRIPOD live in `05-write-reporting`).
+- README `02-tables` mount blurb updated. Front MODULE has no financial-model color section.
+
+
 ## 2026-09-03 — leftover P1 (paired A change CHG-20260903-014)
 
 Author: Aitor. Branch: `fix/audit-p1-20260903`. Does not merge to main.
