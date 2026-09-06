@@ -13,7 +13,10 @@ is known (Radiology-family vs Nature-family article shape, house voice, word/fig
 conventions).
 
 It is **not** journal selection / 选刊 / “where to submit.” Route those to A `03_research`
-(journal-selection) and B `03-lit-search` (search/evidence). Do not treat this id as a 选刊 SOP.
+(`literature/journal-selection.md` + `medical-journal-submit/`) and B `03-lit-search`
+(search/evidence). Do not treat this id as a 选刊 SOP.
 
 House-style files: `radiology-writing/`, `radiology-polishing/radiology-house-style.md`,
 `journal-patterns-2023-2026.md` (venue-family writing patterns, not a submit-here list).
+
+This pack must **not** contain `journal-selection.md`.

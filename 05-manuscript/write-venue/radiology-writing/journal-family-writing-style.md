@@ -31,12 +31,12 @@ Use when the target is European Radiology or a similar European specialist radio
 
 Use a 250-word structured abstract:
 
-```text
+`text
 Objectives
 Materials and Methods
 Results
 Conclusion
-```
+`
 
 The Results first sentence should identify the evaluated cohort, with age/sex summary if available. Report numerical results, p values, and CIs when appropriate. The Conclusion answers the objective only; do not add speculative importance.
 
@@ -113,12 +113,12 @@ Use when the target is NEJM or a NEJM-like general medical venue.
 
 Use the four labeled paragraphs:
 
-```text
+`text
 Background
 Methods
 Results
 Conclusions
-```
+`
 
 Keep to no more than 250 words unless the current guide differs. Include trial registration when applicable. Results should report absolute counts/rates where possible, effect estimates, CIs, and only those p values that are appropriate under the multiplicity plan.
 
@@ -182,13 +182,13 @@ Use when the target is The Lancet, The Lancet Oncology, The Lancet Digital Healt
 
 For original Articles, use a semistructured abstract:
 
-```text
+`text
 Background
 Methods
 Findings
 Interpretation
 Funding
-```
+`
 
 Default limits from the supplied April 2026 guide are up to 3500 words, or 4500 words for randomized controlled trials, with about 30 references. Treat these as target-specific rules and recheck before final submission.
 
@@ -196,11 +196,11 @@ Default limits from the supplied April 2026 guide are up to 3500 words, or 4500 
 
 Add this panel for primary research, systematic reviews, and meta-analyses:
 
-```text
+`text
 Evidence before this study
 Added value of this study
 Implications of all the available evidence
-```
+`
 
 Do not include references inside the panel. In "Evidence before this study," state databases or sources searched, dates, criteria, terms, evidence quality, and pooled estimates when relevant. In "Added value," name exactly what this study contributes. In "Implications," connect the new evidence to practice, policy, or future research.
 
@@ -210,4 +210,4 @@ Route the design to its required guideline: STARD for diagnostic accuracy, STROB
 
 ## Pending exact profiles
 
-For ASCO/JCO-family targets and NEJM AI/Catalyst-specific targets, do not enforce exact word counts, figure counts, or reference style from memory. Ask for the browser-printed guide or A `03_research` (journal-selection) / `05-write-venue` house style to verify current instructions. You may still draft a clinically consequential, generalist-readable version, but label formatting limits as `VERIFY FROM GUIDE`.
+For ASCO/JCO-family targets and NEJM AI/Catalyst-specific targets, do not enforce exact word counts, figure counts, or reference style from memory. Ask for the browser-printed guide or A `03_research` (`literature/journal-selection.md` + `medical-journal-submit/`) / `05-write-venue` house style to verify current instructions. You may still draft a clinically consequential, generalist-readable version, but label formatting limits as `VERIFY FROM GUIDE`.
