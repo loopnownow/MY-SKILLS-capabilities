@@ -64,3 +64,5 @@ Path: peer-review-others
 
 Internal note: dealbreakers — [list or none]
 ```
+
+跨包调研提炼的原则(非挂载，仅规则参考)：[external-principles.md](external-principles.md)

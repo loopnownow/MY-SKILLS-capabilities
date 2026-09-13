@@ -78,3 +78,5 @@ Patient-flow / STROBE / study-workflow / methods-pipeline cartoons → `../fig-f
 - Checklist item (STROBE flow) → `04-fig-flow` and `05-write-reporting`
 - Captions / display-item plan → `05-write-manuscript` / `05-write-venue`
 - Harsh read before submission → `06-review-critique`
+
+跨包调研提炼的原则(非挂载，仅规则参考)：[external-principles.md](external-principles.md)
