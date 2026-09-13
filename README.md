@@ -72,3 +72,7 @@ This package does **not** contain personal Aitor-format, de-AI, personal review/
 - Do not treat this pack as a mounted Skill until A’s registry says so.
 
 Default *external* candidates (not this repo): `Imbad0202/academic-research-skills`, `Aperivue/medsci-skills`. Both remain PROPOSED in A until approved.
+
+## v4 companion (CHG-20260913-001)
+
+Fine-id mounts are defined in A `MY-SKILLS` registry v4. This repo adds new MedSci folders under `03-research/` and `cross-pack/` stubs for Scientific/AIPOCH/Nature hybrid mounts. Nature stubs stay license-pending.

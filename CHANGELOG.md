@@ -1,3 +1,11 @@
+
+## 2026-09-13 — CHG-20260913-001 (A registry v4 companion)
+
+- Add MedSci new mounts: `03-research/intake-project`, `design-ai-benchmarking`, `architecture-zoo`, `fill-protocol`
+- Add `cross-pack/{scientific,aipoch,nature}/` stubs for hybrid fine ids (not default B mounts; Nature license 需核实)
+- Append `external-principles.md` to `fig-plot`, `review-peer`, `review-response`
+- OpenClaw intentionally absent from cross-pack
+
 # Changelog
 
 ## 2026-09-03 — clinical tables front (paired A change CHG-20260903-015)

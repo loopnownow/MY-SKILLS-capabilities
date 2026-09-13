@@ -26,3 +26,5 @@ review is `06-review-peer`. Personal letter voice stays in **A personal**.
 
 - One comment → one response. Do not invent unrun experiments.
 - Sentence rewrites → `05-write-manuscript` / `05-write-polish`.
+
+| [external-principles.md](external-principles.md) | 跨包原则参考(非挂载)：审稿人隔离+防止正文臃肿 |
