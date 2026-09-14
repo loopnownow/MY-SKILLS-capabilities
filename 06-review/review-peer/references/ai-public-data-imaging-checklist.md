@@ -11,6 +11,7 @@ Short gate list for manuscripts that train or evaluate AI (especially imaging) o
 ## Labels & circularity
 
 - [ ] **Label circularity** — Criterion/proxy features that reconstruct the label (including near-criterion signs) must be justified, sensitivity-tested, or removed; do not claim “criterion-free” without that audit.
+- [ ] **Phenotype / subgroup endpoints** — When diagnosis is a composite rule (e.g. Rotterdam ≥2/3), missing phenotype-subgroup analyses are often a Major limitation; morphology markers already used in the rule (e.g. follicle count for PCOM) must not be treated as the diagnostic endpoint inside that same subgroup.
 - [ ] **Morphology ≠ clinical diagnosis** — Imaging positives labeled as morphology (e.g. PCO) must not be silently treated as adjudicated clinical disease (e.g. PCOS) in objectives, conclusions, or translational claims.
 
 ## Statistics
