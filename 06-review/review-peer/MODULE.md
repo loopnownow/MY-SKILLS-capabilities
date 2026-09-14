@@ -1,3 +1,5 @@
+
+Checklist (AI + public-data/imaging): [references/ai-public-data-imaging-checklist.md](references/ai-public-data-imaging-checklist.md).
 ---
 name: "review-peer"
 domain: "06_review"

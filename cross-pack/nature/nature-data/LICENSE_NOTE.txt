@@ -1,1 +1,2 @@
-license_flag: PROPOSED — Nature package LICENSE not verified; do not treat as MOUNTED until user confirms.
+license_flag: Apache-2.0 verified 2026-09-14 (Yuan1z0825/nature-skills root LICENSE @287ee37; GitHub SPDX Apache-2.0).
+note: Third-party package — not Springer Nature official. OpenClaw remains never-mount.
