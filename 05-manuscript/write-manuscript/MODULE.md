@@ -37,13 +37,17 @@ Discussion). This pack is **generic IMRAD only**.
 ## Hard rules
 
 1. Numbers stick to assertions (n, AUC, CI, *P*); no empty claims
-2. Problem → gap → approach in the Introduction
+2. Introduction: problem → guideline definition → gap → approach (`radiology-writing/introduction.md`)
 3. Observational designs: *associated with*, not causal verbs
 4. Consistent terms; expand abbreviations at first use
-5. Short sentences; do not invent results, citations, ethics numbers, or unrun experiments
-6. Missing facts → comments / open questions, never fabricated body text
-7. Patient-level split language when the study is predictive
-8. Dual-set reporting when the user supplied both training and test metrics
+5. Introduction and Discussion sentences run 10–30 words, one main proposition each; no run of short sentences (a personal layer may override)
+6. Do not invent results, citations, ethics numbers, or unrun experiments
+7. Missing facts → comments / open questions, never fabricated body text
+8. Patient-level split language when the study is predictive
+9. Dual-set reporting when the user supplied both training and test metrics
+10. Reporting guidelines (TRIPOD, CLAIM, CLEAR) are not named in the Introduction; route to `05-write-reporting`
+11. Related studies are synthesized, not listed: at most one triplet per paragraph, no repeated sentence frames
+
 
 ## Modes
 

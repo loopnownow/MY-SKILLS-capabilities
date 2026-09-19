@@ -1,5 +1,14 @@
 ## 2026-09-14 — clinic-research-design removed; Nature LICENSE note; Lee checklist
 
+## 2026-09-19 — Align Intro v3 + 选刊 list pointers
+
+- `write-manuscript/radiology-writing/introduction.md`: six-element generic contract
+- `write-manuscript` Hard rules: guideline definition, 10–30 words, no TRIPOD in Intro, synthesize related studies
+- `write-polish`: Introduction/Discussion lint table
+- `lit-review`: Introduction evidence pack row contract
+- `write-venue`: pointer to A blacklist / graylist (Frontiers) / whitelist-submitted
+
+
 - Removed `cross-pack/aipoch/clinic-research-design/` (declined: documented scripts absent; eval reports untrusted).
 - Nature cross-pack `LICENSE_NOTE.txt` → Apache-2.0 verified 2026-09-14 (third-party Yuan1z0825; not Springer Nature official).
 - Added `06-review/review-peer/references/ai-public-data-imaging-checklist.md` (Lee WHE harvest C).
