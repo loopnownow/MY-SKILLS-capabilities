@@ -8,3 +8,5 @@ owner: "05-manuscript/write-manuscript/MODULE.md"
 # write-manuscript
 
 Capability body: [MODULE.md](MODULE.md). Do not duplicate it here.
+
+| Introduction | [radiology-writing/introduction.md](radiology-writing/introduction.md) |
