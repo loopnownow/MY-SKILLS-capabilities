@@ -75,4 +75,9 @@ Default *external* candidates (not this repo): `Imbad0202/academic-research-skil
 
 ## v4 companion (CHG-20260913-001)
 
-Fine-id mounts are defined in A `MY-SKILLS` registry v4. This repo adds new MedSci folders under `03-research/` and `cross-pack/` stubs for Scientific/AIPOCH/Nature hybrid mounts. Nature stubs stay license-pending.
+Fine-id mounts are defined in A `MY-SKILLS` registry v4. This repo adds new MedSci folders under `03-research/` and `cross-pack/` **pointer stubs** for Scientific/AIPOCH/Nature hybrid mounts (entity SSOT = A `mounts-cap/<pack>/`; do not duplicate skill bodies in `cross-pack/`). Nature license: Apache-2.0 verified on A side.
+
+## Cache ≠ Mount ≠ Active (A-side contract)
+
+B is the **default mount source** for MedSci-native ids. For hybrid Scientific/Nature/AIPOCH fine ids, A caches bytes under `mounts-cap/` and keeps `cross-pack/` as **pointers only**. Registry (in A) = index. Download ≠ mount ≠ active.
+

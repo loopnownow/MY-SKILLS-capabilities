@@ -1,5 +1,12 @@
 ## 2026-09-14 — clinic-research-design removed; Nature LICENSE note; Lee checklist
 
+## 2026-09-22 — Architecture Batch 1 (de-entity cross-pack)
+
+- Pointerize all `cross-pack/{scientific,nature,aipoch}/*` folders: thin `SKILL.md` + `MODULE.md` pointing at A `mounts-cap/<pack>/…` SSOT. Removed duplicated MODULE bodies.
+- Added `cross-pack/README.md`. Did **not** touch MedSci-native domain skills under `02`–`06`.
+- Companion A change: `feat/arch-batch1-cache-pointer-priority` (load_priority, 52 ceiling, journal data/rules split, Cache≠Mount≠Active docs).
+
+
 ## 2026-09-19 — Align Intro v3 + 选刊 list pointers
 
 - `write-manuscript/radiology-writing/introduction.md`: six-element generic contract
