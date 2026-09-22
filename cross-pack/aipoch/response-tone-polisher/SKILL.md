@@ -1,14 +1,21 @@
 ---
 name: "response-tone-polisher"
 label_cn: "回复语气软化"
-mount_status: "cross_package"
+mount_status: "cross_package_pointer"
 source_package: "AIPOCH"
-description: "回复语气软化"
-owner: "跨包补充/审稿回复_语气软化__response-tone-polisher/MODULE.md"
+description: "POINTER only — entity lives in A mounts-cap cache (mounts-cap/aipoch/scientific-skills/Academic Writing/response-tone-polisher/). Do not duplicate."
+owner: "cross-pack/aipoch/response-tone-polisher/ — pointer stub"
 ---
 
 # 回复语气软化
 
-Capability body: [MODULE.md](MODULE.md). Do not duplicate it here.
+**POINTER — do not duplicate the skill body here.**
 
-来源: AIPOCH | 挂载状态: 跨包补充(来源: AIPOCH, 非B默认)
+| | |
+|---|---|
+| Entity (SSOT) | A's local cache: `mounts-cap/aipoch/scientific-skills/Academic Writing/response-tone-polisher/` |
+| Fetch | `python mounts-cap/fetch.py ensure --id <fine-id>` in MY-SKILLS |
+| Registry | A `01_skill-discovery-integration/registry.yaml` (`stub_in_b: cross-pack/aipoch/response-tone-polisher/`) |
+| This folder | Thin stub only (`SKILL.md` + `MODULE.md` note) |
+
+Capability bytes belong in the external package cache, not in B `cross-pack/`.

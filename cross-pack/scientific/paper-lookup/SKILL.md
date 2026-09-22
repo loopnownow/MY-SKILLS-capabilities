@@ -1,14 +1,21 @@
 ---
 name: "paper-lookup"
 label_cn: "广度检索(18个学术API)"
-mount_status: "cross_package"
+mount_status: "cross_package_pointer"
 source_package: "Scientific"
-description: "广度检索(18个学术API)"
-owner: "跨包补充/文献检索_广度检索__paper-lookup/MODULE.md"
+description: "POINTER only — entity lives in A mounts-cap cache (mounts-cap/scientific/skills/paper-lookup/). Do not duplicate."
+owner: "cross-pack/scientific/paper-lookup/ — pointer stub"
 ---
 
 # 广度检索(18个学术API)
 
-Capability body: [MODULE.md](MODULE.md). Do not duplicate it here.
+**POINTER — do not duplicate the skill body here.**
 
-来源: Scientific | 挂载状态: 跨包补充(来源: Scientific, 非B默认)
+| | |
+|---|---|
+| Entity (SSOT) | A's local cache: `mounts-cap/scientific/skills/paper-lookup/` |
+| Fetch | `python mounts-cap/fetch.py ensure --id <fine-id>` in MY-SKILLS |
+| Registry | A `01_skill-discovery-integration/registry.yaml` (`stub_in_b: cross-pack/scientific/paper-lookup/`) |
+| This folder | Thin stub only (`SKILL.md` + `MODULE.md` note) |
+
+Capability bytes belong in the external package cache, not in B `cross-pack/`.

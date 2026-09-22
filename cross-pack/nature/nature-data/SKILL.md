@@ -1,14 +1,21 @@
 ---
 name: "nature-data"
 label_cn: "数据可用性声明(中英双语)"
-mount_status: "cross_package"
+mount_status: "cross_package_pointer"
 source_package: "Nature"
-description: "数据可用性声明(中英双语)"
-owner: "跨包补充/正文写作_数据可用性声明__nature-data/MODULE.md"
+description: "POINTER only — entity lives in A mounts-cap cache (mounts-cap/nature/skills/nature-data/). Do not duplicate."
+owner: "cross-pack/nature/nature-data/ — pointer stub"
 ---
 
 # 数据可用性声明(中英双语)
 
-Capability body: [MODULE.md](MODULE.md). Do not duplicate it here.
+**POINTER — do not duplicate the skill body here.**
 
-来源: Nature | 挂载状态: 跨包补充(来源: Nature, 非B默认)
+| | |
+|---|---|
+| Entity (SSOT) | A's local cache: `mounts-cap/nature/skills/nature-data/` |
+| Fetch | `python mounts-cap/fetch.py ensure --id <fine-id>` in MY-SKILLS |
+| Registry | A `01_skill-discovery-integration/registry.yaml` (`stub_in_b: cross-pack/nature/nature-data/`) |
+| This folder | Thin stub only (`SKILL.md` + `MODULE.md` note) |
+
+Capability bytes belong in the external package cache, not in B `cross-pack/`.
