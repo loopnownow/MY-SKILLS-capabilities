@@ -28,9 +28,11 @@ Layout follows A's coarse ids (CHG-20260903-008; audit-fix CHG-20260903-013). Un
 
 Until step 3, A may keep local generic copies marked in `EXTERNALIZATION_CANDIDATES.md`. de-AI is in A `05_manuscript/personal/` (2026-09-02).
 
-## Mount points (ids → paths)
+## Path labels (directory labels → paths)
 
-| Id | Path | Use |
+Runtime / session-pick IDs live only in A egistry.yaml\. Names below are **directory/path labels** in this repo (how folders are organized under B). They are **not** a second runtime ID system — do not confuse them with A mount/session IDs.
+
+| Path label | Path | Use |
 |---|---|---|
 | `02-tables` | `02-data-processing/tables/` | Clinical Excel/CSV: headers, missingness, ID, cohort columns (nested `impute/`, `xlsx-office/`) |
 | `02-imaging-io` | `02-data-processing/imaging-io/` | CT/MRI DICOM · NIfTI I/O |
