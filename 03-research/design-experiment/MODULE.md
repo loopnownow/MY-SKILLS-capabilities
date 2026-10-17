@@ -13,6 +13,8 @@ owner: "03-research/design-experiment/MODULE.md"
 
 # Imaging Study Design & Feasibility
 
+Also covers (reference folders kept; fine ids archived 2026-10-17 round 2): `architecture-zoo` → `03-research/architecture-zoo/`, `design-ai-benchmarking` → `03-research/design-ai-benchmarking/`, `frontier-hypothesize` → `03-research/frontier-hypothesize/`, `find-cohort-gap` → `03-research/frontier-ideate/`, `intake-project` → `03-research/intake-project/`.
+
 Use this skill at the **front of the research chain**: someone has imaging data (and maybe
 clinical/pathology/molecular labels) but no settled study. It (1) triages **feasibility** —
 can this data support a credible study at all? — and (2) converts a feasible idea into a

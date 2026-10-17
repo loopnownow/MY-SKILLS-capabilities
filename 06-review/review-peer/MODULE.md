@@ -17,6 +17,8 @@ owner: "06-review/review-peer/MODULE.md"
 
 Write an English review of **someone else's** manuscript. This pack is **other-paper only**.
 
+Also covers former fine id `peer-review-pdf-scan` (PDF inject/attack scan, Phase1.5) — same folder; fine id archived 2026-10-17 round 2.
+
 - Self-audit / pre-submission of the user's own draft → `06-review-critique`
 - Point-by-point response letter → `06-review-response` (this MODULE does **not** own mode-3)
 - Sentence rewrite → `05-write-manuscript` / `05-write-polish`
