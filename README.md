@@ -9,12 +9,13 @@ Layout follows A's coarse ids (CHG-20260903-008; audit-fix CHG-20260903-013). Un
 
 ```
 02-data-processing/   tables, imaging-io, imaging-qc, pictures, fmri, radiomics-habitat
-03-research/          lit-search, lit-fulltext, lit-review, lit-cite, retraction-watcher,
+03-research/          lit-search, lit-fulltext, lit-review, lit-cite, verify-refs, retraction-watcher,
                       design-experiment, design-protocol, design-grant,
                       frontier-ideate, frontier-hypothesize
 04-analysis/          stats-guide, stats-power, stats-models, model-eval, fig-flow, fig-plot
 05-manuscript/        write-manuscript, write-reporting, write-venue, write-polish, humanize
-06-review/            review-peer, review-critique, review-response, response-tone-polisher
+06-review/            review-peer, review-critique, review-response, response-tone-polisher,
+                      simulate-reviewers, tighten-response
 ```
 
 `04-explainability` is **not** in B (archived MedSci path). Generic `humanize` **is** in B (`05-manuscript/humanize/`); personal de-AI remains A-only (`05_manuscript/personal/`).
@@ -45,6 +46,7 @@ Runtime / session-pick IDs live only in A egistry.yaml\. Names below are **direc
 | `03-lit-fulltext` | `03-research/lit-fulltext/` | Full-text retrieve (stub) |
 | `03-lit-review` | `03-research/lit-review/` | Evidence synthesis |
 | `03-lit-cite` | `03-research/lit-cite/` | DOI→BibTeX helper (no Zotero pack) |
+| `03-verify-refs` | `03-research/verify-refs/` | Citation validation / BibTeX (absorbed Scientific) |
 | `03-retraction-watcher` | `03-research/retraction-watcher/` | Retraction / EoC / correction scan |
 | `03-design-experiment` | `03-research/design-experiment/` | Study design / validation / blueprints |
 | `03-design-protocol` | `03-research/design-protocol/` | Protocol write/fill (stub) |
@@ -54,7 +56,7 @@ Runtime / session-pick IDs live only in A egistry.yaml\. Names below are **direc
 | `04-stats-guide` | `04-analysis/stats-guide/` | Test selection / assumptions / reporting |
 | `04-stats-power` | `04-analysis/stats-power/` | Sample size / power |
 | `04-stats-models` | `04-analysis/stats-models/` | Bayesian notes / assumption script (not 0RAD) |
-| `04-model-eval` | `04-analysis/model-eval/` | Calibration / DCA / external validation |
+| `04-model-eval` | `04-analysis/model-eval/` | Calibration / DCA / external validation + leakage gates |
 | `04-fig-flow` | `04-analysis/fig-flow/` | STROBE / patient-flow |
 | `04-fig-plot` | `04-analysis/fig-plot/` | Statistical plots / imaging panels |
 | `05-write-manuscript` | `05-manuscript/write-manuscript/` | Generic writing |
@@ -63,8 +65,10 @@ Runtime / session-pick IDs live only in A egistry.yaml\. Names below are **direc
 | `05-write-polish` | `05-manuscript/write-polish/` | Generic academic English (not de-AI) |
 | `05-humanize` | `05-manuscript/humanize/` | Generic AI-pattern removal (personal de-AI stays A) |
 | `06-review-peer` | `06-review/review-peer/` | Other-paper peer review |
+| `06-simulate-reviewers` | `06-review/simulate-reviewers/` | Multi-reviewer blind isolation |
 | `06-review-critique` | `06-review/review-critique/` | Self-audit / pre-submission |
 | `06-review-response` | `06-review/review-response/` | Point-by-point response |
+| `06-tighten-response` | `06-review/tighten-response/` | Blind replies + anti-accretion |
 | `06-response-tone-polisher` | `06-review/response-tone-polisher/` | Tone softener for response letters |
 
 Translational / reader-study **design** mounts (when approved) belong under `03-research/` — A personal `clinical-translation` stays in MY-SKILLS; do not copy it here.
@@ -81,7 +85,7 @@ Default *external* candidates (not this repo): `Imbad0202/academic-research-skil
 
 ## v4 companion (CHG-20260913-001)
 
-Fine-id mounts are defined in A `MY-SKILLS` registry v4. This repo adds MedSci-native folders under `02`–`06` and `cross-pack/` **pointer stubs** for remaining Scientific/Nature hybrid mounts (entity SSOT = A `mounts-cap/<pack>/`; do not duplicate skill bodies in `cross-pack/`). AIPOCH `retraction-watcher` / `response-tone-polisher` were absorbed as real B domain skills on 2026-10-17 (stubs removed). Nature license: Apache-2.0 verified on A side.
+Fine-id mounts are defined in A `MY-SKILLS` registry v4. This repo adds MedSci-native folders under `02`–`06` and `cross-pack/` **pointer stubs** for remaining Scientific/Nature hybrid mounts (entity SSOT = A `mounts-cap/<pack>/`; do not duplicate skill bodies in `cross-pack/`). AIPOCH `retraction-watcher` / `response-tone-polisher` were absorbed as real B domain skills on 2026-10-17 (stubs removed). Round 3: `verify-refs`, `simulate-reviewers`, `tighten-response` absorbed as owned B domain folders; `model-validation` folded into `model-evaluation` at `04-analysis/model-eval/`. Nature license: Apache-2.0 verified on A side.
 
 ## Cache ≠ Mount ≠ Active (A-side contract)
 
