@@ -1,9 +1,9 @@
 ---
 name: "review-response"
-domain: "06_review"
+domain: "07_response"
 trigger: ["回复审稿人", "point-by-point", "回信"]
 outputs: ["response_letter"]
-owner: "06-review/review-response/MODULE.md"
+owner: "07-response/review-response/MODULE.md"
 ---
 
 # trigger is documentation only; not independently discoverable.

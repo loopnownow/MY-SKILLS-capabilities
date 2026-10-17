@@ -1,8 +1,8 @@
 ---
 name: "tighten-response"
-domain: "06_review"
+domain: "07_response"
 description: Reviewer-blind replies + anti-accretion (former Nature nature-response).
-owner: "06-review/tighten-response/MODULE.md"
+owner: "07-response/tighten-response/MODULE.md"
 ---
 
 # tighten-response

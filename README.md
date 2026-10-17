@@ -1,4 +1,4 @@
-# MY-SKILLS-capabilities
+# MY-SKILLS-base
 
 Mountable **generic** capability package for [loopnownow/MY-SKILLS](https://github.com/loopnownow/MY-SKILLS) (framework A).
 
@@ -67,9 +67,9 @@ Runtime / session-pick IDs live only in A egistry.yaml\. Names below are **direc
 | `06-review-peer` | `06-review/review-peer/` | Other-paper peer review |
 | `06-simulate-reviewers` | `06-review/simulate-reviewers/` | Multi-reviewer blind isolation |
 | `06-review-critique` | `06-review/review-critique/` | Self-audit / pre-submission |
-| `06-review-response` | `06-review/review-response/` | Point-by-point response |
-| `06-tighten-response` | `06-review/tighten-response/` | Blind replies + anti-accretion |
-| `06-response-tone-polisher` | `06-review/response-tone-polisher/` | Tone softener for response letters |
+| `07-review-response` | `07-response/review-response/` | Point-by-point response |
+| `07-tighten-response` | `07-response/tighten-response/` | Blind replies + anti-accretion |
+| `07-response-tone-polisher` | `07-response/response-tone-polisher/` | Tone softener for response letters |
 
 Translational / reader-study **design** mounts (when approved) belong under `03-research/` — A personal `clinical-translation` stays in MY-SKILLS; do not copy it here.
 

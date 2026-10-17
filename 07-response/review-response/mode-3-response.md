@@ -35,7 +35,7 @@ and still improve the wording if possible.
 ## Output
 
 ```text
-Skill: 06-review-response
+Skill: 07-review-response
 
 Letter (paste-ready)
 

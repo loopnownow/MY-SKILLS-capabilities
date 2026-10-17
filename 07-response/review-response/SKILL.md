@@ -1,8 +1,8 @@
 ---
 name: "review-response"
-domain: "06_review"
+domain: "07_response"
 description: Point-by-point reviewer response.
-owner: "06-review/review-response/MODULE.md"
+owner: "07-response/review-response/MODULE.md"
 ---
 
 # review-response
