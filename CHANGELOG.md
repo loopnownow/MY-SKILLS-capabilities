@@ -1,3 +1,23 @@
+## 2026-10-17 — Absorb three fine ids into B domain folders
+
+Author: Aitor. Branch: `feat/absorb-three-to-b-20261017`. Does not merge to main until owner asks.
+
+- **humanize** → `05-manuscript/humanize/` (from MedSci `skills/humanize/`; MIT). Personal A de-AI untouched.
+- **retraction-watcher** → `03-research/retraction-watcher/` (from AIPOCH; MIT). Removed `cross-pack/aipoch/retraction-watcher/` pointer stub.
+- **response-tone-polisher** → `06-review/response-tone-polisher/` (from AIPOCH; MIT). Removed `cross-pack/aipoch/response-tone-polisher/` pointer stub.
+- README: `05-humanize` now in B; path-label rows added; AIPOCH stub wording revised.
+- Companion A change: registry retarget `source: my-skills-capabilities` (same fine ids stay MOUNTED).
+
+## 2026-10-17 — Fine-ID round 3: absorb three + model-eval synthesize
+
+Author: Aitor. Branch: `feat/absorb-three-to-b-20261017`. Does not merge to main until owner asks.
+
+- **verify-refs** → `03-research/verify-refs/` (from Scientific `skills/citation-management/`; MIT).
+- **simulate-reviewers** → `06-review/simulate-reviewers/` (from Nature `skills/nature-reviewer/`; Apache-2.0).
+- **tighten-response** → `06-review/tighten-response/` (from Nature `skills/nature-response/`; Apache-2.0).
+- **model-evaluation** umbrella: `model-validation` archived→`model-evaluation`; same folder `04-analysis/model-eval/` expanded for leakage gates.
+- README path-label rows updated. Companion A: registry retarget + PROPOSED archives (`check-grant-proposal`, `scientific-critical-thinking`).
+
 ## 2026-09-14 — clinic-research-design removed; Nature LICENSE note; Lee checklist
 
 ## 2026-09-22 — Architecture Batch 1 (de-entity cross-pack)
