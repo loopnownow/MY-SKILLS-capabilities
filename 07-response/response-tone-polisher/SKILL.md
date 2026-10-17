@@ -1,8 +1,8 @@
 ---
 name: "response-tone-polisher"
-domain: "06_review"
+domain: "07_response"
 description: Soften defensive tone in reviewer-response drafts without changing scientific position.
-owner: "06-review/response-tone-polisher/MODULE.md"
+owner: "07-response/response-tone-polisher/MODULE.md"
 ---
 
 # response-tone-polisher

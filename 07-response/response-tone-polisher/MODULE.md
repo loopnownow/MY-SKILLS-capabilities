@@ -1,9 +1,9 @@
 ---
 name: "response-tone-polisher"
-domain: "06_review"
+domain: "07_response"
 trigger: ["语气软化", "tone polish", "礼貌回复", "response tone"]
 outputs: ["polished_response"]
-owner: "06-review/response-tone-polisher/MODULE.md"
+owner: "07-response/response-tone-polisher/MODULE.md"
 ---
 
 # response-tone-polisher

@@ -49,7 +49,7 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 | `05-write-polish` | `05-manuscript/write-polish/` |
 | `06-review-peer` | `06-review/review-peer/` |
 | `06-review-critique` | `06-review/review-critique/` |
-| `06-review-response` | `06-review/review-response/` |
+| `07-review-response` | `07-response/review-response/` |
 
 `02-tables` is clinical Excel/CSV (headers, missingness, ID, cohort). Nested `xlsx-office/` is the Anthropic office/xlsx skill; nested `impute/` is fill/outlier implementation.
 

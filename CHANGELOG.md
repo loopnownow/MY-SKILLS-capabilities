@@ -1,3 +1,8 @@
+## 2026-10-17 -- A/B symmetry 07-response
+
+- Moved `revise` / `tighten-response` / `response-tone-polisher` bodies from `06-review/` to `07-response/`.
+- Fine IDs unchanged. A07 remains personal top layer in MY-SKILLS.
+
 ﻿## 2026-10-17 鈥?Absorb three fine ids into B domain folders
 
 ## 2026-10-17 — rename to MY-SKILLS-base
