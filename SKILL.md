@@ -1,4 +1,4 @@
----
+﻿---
 name: my-skills-base
 description: >
   Mountable generic capability package for data processing, research, analysis,
@@ -35,6 +35,8 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 | `03-design-experiment` | `03-research/design-experiment/` |
 | `03-design-protocol` | `03-research/design-protocol/` |
 | `03-design-grant` | `03-research/design-grant/` |
+| `03-fill-protocol` | `03-research/fill-protocol/` |
+| `03-find-journal` | `03-research/find-journal/` |
 | `03-frontier-ideate` | `03-research/frontier-ideate/` |
 | `03-frontier-hypothesize` | `03-research/frontier-hypothesize/` |
 | `04-stats-guide` | `04-analysis/stats-guide/` |
@@ -53,6 +55,6 @@ Mount-point table (id → classified path; unlimited depth inside each pack):
 
 `02-tables` is clinical Excel/CSV (headers, missingness, ID, cohort). Nested `xlsx-office/` is the Anthropic office/xlsx skill; nested `impute/` is fill/outlier implementation.
 
-`04-explainability` and `05-humanize` are not in this package.
+`04-explainability` is not in this package. `humanize` lives under `05-manuscript/humanize/`. Cross-pack stubs pruned 2026-10-17.
 
-No external Skill is mounted here. Academic Research Skills / MedSci Skills are future candidates for **A**, not contents of this package.
+External cross-pack stubs were pruned 2026-10-17 (archived under `D:\0del\b-prune-findjournal-fill-20261017\`). MedSci fill-protocol body is native under `03-research/fill-protocol/`.
