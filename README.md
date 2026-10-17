@@ -1,4 +1,4 @@
-# MY-SKILLS-capabilities
+# MY-SKILLS-base
 
 Mountable **generic** capability package for [loopnownow/MY-SKILLS](https://github.com/loopnownow/MY-SKILLS) (framework A).
 

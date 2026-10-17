@@ -1,5 +1,5 @@
 ---
-name: my-skills-capabilities
+name: my-skills-base
 description: >
   Mountable generic capability package for data processing, research, analysis,
   manuscript writing, and review. Designed to be mounted by MY-SKILLS (framework A).
@@ -7,7 +7,7 @@ description: >
   or personal final-authority layer.
 ---
 
-# MY-SKILLS Capability Package
+# MY-SKILLS-base (capability package)
 
 Reusable professional modules extracted from MY-SKILLS. Independent of:
 
